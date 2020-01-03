@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import CurrentSongPlaying from '../components/CurrentSongPlaying';
 import CurrentSongPaused from '../components/CurrentSongPaused';
 import CurrentSongNone from '../components/CurrentSongNone';
+import Home from '../components/Home';
 
 // storiesOf('Button', module)
 //   .addParameters({
@@ -30,3 +31,5 @@ storiesOf('CurrentSong', module)
   .add('Playing', () => <CurrentSongPlaying></CurrentSongPlaying>)
   .add('Paused', () => <CurrentSongPaused></CurrentSongPaused>)
   .add('None', () => <CurrentSongNone></CurrentSongNone>);
+
+storiesOf('Home', module).add('Home', () => <Home></Home>);

@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
 
 import './CurrentSong.scss';
 
