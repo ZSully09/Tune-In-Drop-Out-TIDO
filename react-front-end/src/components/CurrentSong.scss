@@ -1,0 +1,33 @@
+.div {
+  background-color: black;
+  height: 15%;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.div img {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  position: relative;
+}
+
+.div #artist {
+  padding-left: 10px;
+  margin: 10px;
+}
+
+.div #song {
+  margin: 10px;
+}
+
+.div #commands {
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+}
