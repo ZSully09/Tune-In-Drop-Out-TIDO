@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actionTypes from "../../store/actions/actionTypes";
+import * as actionTypes from "../../actions/actionTypes";
 import {
   Grid,
   Typography,
@@ -46,7 +46,7 @@ class MusicPlayer extends Component {
     if (window.Spotify) {
       clearInterval(this.playerCheckInterval);
       this.player = new window.Spotify.Player({
-        name: "Idanlo's Spotify App",
+        name: "Tido Spotify App",
         getOAuthToken: cb => {
           cb(token);
         }
