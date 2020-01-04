@@ -7,6 +7,7 @@ import CurrentSongPlaying from '../components/CurrentSongPlaying';
 import CurrentSongPaused from '../components/CurrentSongPaused';
 import CurrentSongNone from '../components/CurrentSongNone';
 
+import SearchBar from '../components/SearchBar';
 // storiesOf('Button', module)
 //   .addParameters({
 //     backgrounds: [{ name: 'dark', value: '#222f3e', default: true }]
@@ -30,3 +31,6 @@ storiesOf('CurrentSong', module)
   .add('Playing', () => <CurrentSongPlaying></CurrentSongPlaying>)
   .add('Paused', () => <CurrentSongPaused></CurrentSongPaused>)
   .add('None', () => <CurrentSongNone></CurrentSongNone>);
+
+storiesOf('SeachBar', module)
+  .add('search', () => <SearchBar></SearchBar>);
