@@ -8,6 +8,7 @@ import CurrentSongPaused from '../components/CurrentSongPaused';
 import CurrentSongNone from '../components/CurrentSongNone';
 import Home from '../components/Home';
 import Login from '../components/Login';
+import Register from '../components/Registration';
 
 // storiesOf('Button', module)
 //   .addParameters({
@@ -36,3 +37,5 @@ storiesOf('CurrentSong', module)
 storiesOf('Home', module).add('Home', () => <Home></Home>);
 
 storiesOf('Login', module).add('Login', () => <Login></Login>);
+
+storiesOf('Register', module).add('Register', () => <Register></Register>);
