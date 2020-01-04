@@ -5,7 +5,7 @@ import Home from './components/Home';
 // import Create from './components/Create';
 // import Party from './components/Party';
 import Login from './components/Login';
-// import Register from './components/Register';
+import Register from './components/Registration';
 import './App.css';
 
 class App extends Component {
@@ -36,8 +36,8 @@ class App extends Component {
         <div className="App">
           <Route path="/" component={Home} />
           <Route path="/login" component={Login} />
-          {/*<Route path="/register" component={Register} /> 
-          <Route path="/create" component={Create} />
+          <Route path="/register" component={Register} />
+          {/*<Route path="/create" component={Create} />
           <Route path="/party" component={Party} />
           */}
 
