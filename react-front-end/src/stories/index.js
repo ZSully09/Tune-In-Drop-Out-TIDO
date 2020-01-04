@@ -3,14 +3,15 @@ import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 // import Button from 'components/Button.js';
-import CurrentSongPlaying from '../components/CurrentSongPlaying';
-import CurrentSongPaused from '../components/CurrentSongPaused';
-import CurrentSongNone from '../components/CurrentSongNone';
-import Home from '../components/Home';
-import Login from '../components/Login';
-import Register from '../components/Registration';
-import Create from '../components/Create';
-import SearchBar from '../components/SearchBar';
+import CurrentSongPlaying from '../components/current_song/CurrentSongPlaying';
+import CurrentSongPaused from '../components/current_song/CurrentSongPaused';
+import CurrentSongNone from '../components/current_song/CurrentSongNone';
+import Home from '../components/home/Home';
+import Login from '../components/login/Login';
+import Register from '../components/registration/Registration';
+import Create from '../components/create/Create';
+import Party from '../components/party/Party';
+import SearchBar from '../components/search_bar/SearchBar';
 // storiesOf('Button', module)
 //   .addParameters({
 //     backgrounds: [{ name: 'dark', value: '#222f3e', default: true }]
@@ -44,3 +45,5 @@ storiesOf('Login', module).add('Login', () => <Login></Login>);
 storiesOf('Register', module).add('Register', () => <Register></Register>);
 
 storiesOf('Create', module).add('Create', () => <Create></Create>);
+
+storiesOf('Party', module).add('Party', () => <Party></Party>);
