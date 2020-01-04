@@ -10,6 +10,7 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 import Register from '../components/Registration';
 
+import SearchBar from '../components/SearchBar';
 // storiesOf('Button', module)
 //   .addParameters({
 //     backgrounds: [{ name: 'dark', value: '#222f3e', default: true }]
@@ -34,8 +35,13 @@ storiesOf('CurrentSong', module)
   .add('Paused', () => <CurrentSongPaused></CurrentSongPaused>)
   .add('None', () => <CurrentSongNone></CurrentSongNone>);
 
+
+storiesOf('SeachBar', module)
+  .add('search', () => <SearchBar></SearchBar>);
+
 storiesOf('Home', module).add('Home', () => <Home></Home>);
 
 storiesOf('Login', module).add('Login', () => <Login></Login>);
 
 storiesOf('Register', module).add('Register', () => <Register></Register>);
+
