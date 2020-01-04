@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import Home from './components/Home';
+import Home from './components/home/Home';
 // import Create from './components/Create';
 // import Party from './components/Party';
-import Login from './components/Login';
-import Register from './components/Registration';
-import Create from './components/Create';
+import Login from './components/login/Login';
+import Register from './components/registration/Registration';
+import Create from './components/create/Create';
+import Party from './components/party/Party';
 import './App.css';
 
 class App extends Component {
@@ -39,8 +40,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/create" component={Create} />
-          {/*<Route path="/party" component={Party} />
-           */}
+          <Route path="/party" component={Party} />
         </div>
       </Router>
     );
