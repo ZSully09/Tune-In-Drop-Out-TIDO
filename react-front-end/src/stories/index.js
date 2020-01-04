@@ -10,6 +10,7 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 
 import SearchBar from '../components/SearchBar';
+import Playlist from '../components/Playlist';
 // storiesOf('Button', module)
 //   .addParameters({
 //     backgrounds: [{ name: 'dark', value: '#222f3e', default: true }]
@@ -41,4 +42,7 @@ storiesOf('SeachBar', module)
 storiesOf('Home', module).add('Home', () => <Home></Home>);
 
 storiesOf('Login', module).add('Login', () => <Login></Login>);
+
+storiesOf('Playlist', module).add('Playlist', () => <Playlist></Playlist>);
+
 
