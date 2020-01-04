@@ -1,0 +1,25 @@
+main {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+// .button--create--account {
+//   width: 100px;
+//   height: 50px;
+// }
