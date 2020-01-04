@@ -9,7 +9,7 @@ import CurrentSongNone from '../components/CurrentSongNone';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import Register from '../components/Registration';
-
+import Create from '../components/Create';
 import SearchBar from '../components/SearchBar';
 // storiesOf('Button', module)
 //   .addParameters({
@@ -35,9 +35,7 @@ storiesOf('CurrentSong', module)
   .add('Paused', () => <CurrentSongPaused></CurrentSongPaused>)
   .add('None', () => <CurrentSongNone></CurrentSongNone>);
 
-
-storiesOf('SeachBar', module)
-  .add('search', () => <SearchBar></SearchBar>);
+storiesOf('SeachBar', module).add('search', () => <SearchBar></SearchBar>);
 
 storiesOf('Home', module).add('Home', () => <Home></Home>);
 
@@ -45,3 +43,4 @@ storiesOf('Login', module).add('Login', () => <Login></Login>);
 
 storiesOf('Register', module).add('Register', () => <Register></Register>);
 
+storiesOf('Create', module).add('Create', () => <Create></Create>);

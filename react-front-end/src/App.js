@@ -6,6 +6,7 @@ import Home from './components/Home';
 // import Party from './components/Party';
 import Login from './components/Login';
 import Register from './components/Registration';
+import Create from './components/Create';
 import './App.css';
 
 class App extends Component {
@@ -37,12 +38,9 @@ class App extends Component {
           <Route path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          {/*<Route path="/create" component={Create} />
-          <Route path="/party" component={Party} />
-          */}
-
-          {/* <h1>{this.state.message}</h1>
-          <button onClick={this.fetchData}>Fetch Data</button> */}
+          <Route path="/create" component={Create} />
+          {/*<Route path="/party" component={Party} />
+           */}
         </div>
       </Router>
     );
