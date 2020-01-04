@@ -4,14 +4,15 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.8.2",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "classnames": "^2.2.6",
     "node-sass": "^4.13.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.8.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-spotify-api": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
