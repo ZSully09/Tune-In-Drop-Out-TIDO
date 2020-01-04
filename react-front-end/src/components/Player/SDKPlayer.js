@@ -1,6 +1,34 @@
+import React, { Component } from 'react';
+
+class MusicPlayer extends Component {
+  constructor(props) {
+      super(props);
+
+      checkForPlayer = () => {
+        const token = this.props.user.access_token;
+
+        if (window.Spotify) {
+            clearInterval(this.playerCheckInterval);
+            this.player = new window.Spotify.Player({
+                name: "Tido Spotify App",
+                getOAuthToken: cb => {
+                    cb(token);
+                }
+            });
+        }
+
+        if (this.player) {
+            this.createEventHandlers();
+
+            this.player.connect();
+        }
+    };
+
+
+
 window.onSpotifyWebPlaybackSDKReady = () => {
   const token =
-    "BQBZeRHpYOrVYruVGqWfw-UkxnNI8VDRDIRHUiVdV2UD1_NG5kifA7cYrcTLt5boWrBkqhZYbRsbD99uY2sCIdqqwzGOs4MCSRdWUbkCrZGOoNdd1cWk4NuuyNi2zs9UonJ0VuHGrjAustI846X7o_6aUgTrwwaHwxB77L1swMoybMykU87o2rIfwBQ";
+    "BQBZeRHpYOrVYruVGqWfw-BQAUIqEKfZpH3gITzNGqrEYOct6XGvRhFKPIpRtvg7Le_0g6w1Dh2q9UiazUYUz9gfiN3QCu0lhTNtMwIjfVg5kErRQ_LoWr3Agm-q5ZhR-BQAUIqEKfZpH3gITzNGqrEYOct6XGvRhFKPIpRtvg7Le_0g6w1Dh2q9UiazUYUz9gfiN3QCu0lhTNtMwIjfVg5kErRQ_LoWr3Agm-q5ZhR-F0fn4smPyF5i7jg3gOncV64dkA6GSfyl5J8n4H8oIVGbMLRgS9lk-sLRp6LldpgfQwlfJUApepzTjUfo-sLRp6LldpgfQwlfJUApepzTjUfo";
   const player = new Spotify.Player({
     name: "Web Playback SDK Quick Start Player",
     getOAuthToken: cb => {
