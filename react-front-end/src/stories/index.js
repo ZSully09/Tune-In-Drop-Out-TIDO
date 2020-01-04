@@ -7,6 +7,7 @@ import CurrentSongPlaying from '../components/CurrentSongPlaying';
 import CurrentSongPaused from '../components/CurrentSongPaused';
 import CurrentSongNone from '../components/CurrentSongNone';
 import Home from '../components/Home';
+import Login from '../components/Login';
 
 // storiesOf('Button', module)
 //   .addParameters({
@@ -33,3 +34,5 @@ storiesOf('CurrentSong', module)
   .add('None', () => <CurrentSongNone></CurrentSongNone>);
 
 storiesOf('Home', module).add('Home', () => <Home></Home>);
+
+storiesOf('Login', module).add('Login', () => <Login></Login>);
