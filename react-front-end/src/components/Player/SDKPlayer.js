@@ -25,30 +25,49 @@ class MusicPlayer extends Component {
     };
 
 
+// window.onSpotifyWebPlaybackSDKReady = () => {
+//   const token =
+//     "BQBZeRHpYOrVYruVGqWfw-BQAUIqEKfZpH3gITzNGqrEYOct6XGvRhFKPIpRtvg7Le_0g6w1Dh2q9UiazUYUz9gfiN3QCu0lhTNtMwIjfVg5kErRQ_LoWr3Agm-q5ZhR-BQAUIqEKfZpH3gITzNGqrEYOct6XGvRhFKPIpRtvg7Le_0g6w1Dh2q9UiazUYUz9gfiN3QCu0lhTNtMwIjfVg5kErRQ_LoWr3Agm-q5ZhR-F0fn4smPyF5i7jg3gOncV64dkA6GSfyl5J8n4H8oIVGbMLRgS9lk-sLRp6LldpgfQwlfJUApepzTjUfo-sLRp6LldpgfQwlfJUApepzTjUfo";
+//   const player = new Spotify.Player({
+//     name: "Web Playback SDK Quick Start Player",
+//     getOAuthToken: cb => {
+//       cb(token);
+//     }
+//   });
 
-window.onSpotifyWebPlaybackSDKReady = () => {
-  const token =
-    "BQBZeRHpYOrVYruVGqWfw-BQAUIqEKfZpH3gITzNGqrEYOct6XGvRhFKPIpRtvg7Le_0g6w1Dh2q9UiazUYUz9gfiN3QCu0lhTNtMwIjfVg5kErRQ_LoWr3Agm-q5ZhR-BQAUIqEKfZpH3gITzNGqrEYOct6XGvRhFKPIpRtvg7Le_0g6w1Dh2q9UiazUYUz9gfiN3QCu0lhTNtMwIjfVg5kErRQ_LoWr3Agm-q5ZhR-F0fn4smPyF5i7jg3gOncV64dkA6GSfyl5J8n4H8oIVGbMLRgS9lk-sLRp6LldpgfQwlfJUApepzTjUfo-sLRp6LldpgfQwlfJUApepzTjUfo";
-  const player = new Spotify.Player({
-    name: "Web Playback SDK Quick Start Player",
-    getOAuthToken: cb => {
-      cb(token);
-    }
-  });
 
-  // Error handling
-  player.addListener("initialization_error", ({ message }) => {
-    console.error(message);
+// Error handling
+createEventHandlers = () => {
+  this.player.on('initialization_error', e => {
+      console.error('Initialization error ', e);
+      this.setState({ player_init_error: true });
   });
-  player.addListener("authentication_error", ({ message }) => {
-    console.error(message);
-  });
-  player.addListener("account_error", ({ message }) => {
-    console.error(message);
-  });
-  player.addListener("playback_error", ({ message }) => {
-    console.error(message);
-  });
+  this.player.on('authentication_error', e =>
+      console.error('Authentication error ', e)
+  );
+  this.player.on('account_error', e =>
+      console.error('Account error ', e)
+  );
+  this.player.on('playback_error', e =>
+      console.error('Playback error ', e)
+  )
+
+
+  // // Error handling
+  // player.addListener("initialization_error", ({ message }) => {
+  //   console.error(message);
+  // });
+  // player.addListener("authentication_error", ({ message }) => {
+  //   console.error(message);
+  // });
+  // player.addListener("account_error", ({ message }) => {
+  //   console.error(message);
+  // });
+  // player.addListener("playback_error", ({ message }) => {
+  //   console.error(message);
+  // });
+
+
 
   // Playback status updates
   player.addListener("player_state_changed", state => {
