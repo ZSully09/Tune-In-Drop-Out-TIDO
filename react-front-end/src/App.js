@@ -92,7 +92,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
+          <header className="App-header" style={{ height: '10vh' }}>
             <Script
               url="https://sdk.scdn.co/spotify-player.js"
               onCreate={this.handleScriptCreate.bind(this)}
