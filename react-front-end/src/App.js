@@ -8,6 +8,7 @@ import Login from './components/login/Login';
 import Register from './components/registration/Registration';
 import Create from './components/create/Create';
 import Party from './components/party_room/Party';
+import Join from './components/join/Join';
 import './App.css';
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path="/register" component={Register} />
           <Route path="/create" component={Create} />
           <Route path="/party" component={Party} />
+          <Route path="/join" component={Join} />
         </div>
       </Router>
     );

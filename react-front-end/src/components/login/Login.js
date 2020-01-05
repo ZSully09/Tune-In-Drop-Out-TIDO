@@ -23,7 +23,6 @@ export default function Login(props) {
         href={`https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_SPOTIFY_REDIRECT_URI}&scope=${process.env.REACT_APP_SPOTIFY_SCOPE}&response_type=token`}
         style={{ textDecoration: 'none' }}
       >
-        {' '}
         Login with Spotify
       </a>
       {/* </button> */}
