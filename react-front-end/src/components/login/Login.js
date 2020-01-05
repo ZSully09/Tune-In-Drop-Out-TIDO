@@ -32,6 +32,7 @@ class LoginPage extends Component {
     const email = classNames('input--email');
     const password = classNames('input--password');
     const loginButton = classNames('button--login');
+    const spotifyLoginButton = classNames('button--spotify--login');
 
     return (
       <div className="login-page">
@@ -43,7 +44,7 @@ class LoginPage extends Component {
             <button className={loginButton}> Login</button>
             <SpotifyLogin
               type="button"
-              className="btn btn-dark"
+              className={spotifyLoginButton}
               buttonText={buttonText}
               clientId={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
               redirectUri={process.env.REACT_APP_SPOTIFY_REDIRECT_URI}
