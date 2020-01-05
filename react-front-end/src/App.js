@@ -30,7 +30,7 @@ class App extends Component {
     console.log('Script loaded');
     const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
     const player = new window.Spotify.Player({
-      name: 'Web Playback SDK Quick Start Player',
+      name: 'TiDo',
       getOAuthToken: cb => {
         cb(token);
       }
