@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Home from './components/home/Home';
-// import Create from './components/Create';
-// import Party from './components/Party';
 import Login from './components/login/Login';
 import Register from './components/registration/Registration';
 import Create from './components/create/Create';
