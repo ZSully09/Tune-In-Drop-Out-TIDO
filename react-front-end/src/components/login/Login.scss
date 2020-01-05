@@ -25,7 +25,12 @@ button:hover {
   cursor: pointer;
 }
 
-button {
+.button--login {
+  width: 150px;
+  height: 30px;
+}
+
+.button--spotify--login {
   width: 150px;
   height: 30px;
 }
