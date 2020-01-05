@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
 import classNames from 'classnames';
 import './Login.scss';
 
@@ -17,7 +18,15 @@ export default function Login(props) {
         <input className={password} placeholder="Password"></input>
       </form>
       <button className={loginButton}> Login</button>
-      <button className={loginViaSpotifyButton}> Login with Spotify</button>
+      {/* <button className={loginViaSpotifyButton}> */}
+      <a
+        href={`https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_SPOTIFY_REDIRECT_URI}&scope=${process.env.REACT_APP_SPOTIFY_SCOPE}&response_type=token`}
+        style={{ textDecoration: 'none' }}
+      >
+        {' '}
+        Login with Spotify
+      </a>
+      {/* </button> */}
     </main>
   );
 }
