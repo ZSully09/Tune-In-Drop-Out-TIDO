@@ -28,7 +28,8 @@ class App extends Component {
   handleLoadSuccess() {
     this.setState({ scriptLoaded: true });
     console.log("Script loaded");
-    const token = "[My Spotify Web API access token]";
+    const token =
+      "BQAhV8OCM7tDueHbTZo5N_wgyTBHpG07EGCuG6Z-ErF23jY6g5a0gffU5_WLxupZ0yKV55wolOhiENq4iEMm6w37n5IW1Ie2DsNxlda_jwBta5FjPHQEtLnBaJkgSzb3msiRJFCU5uzAD8g2a_V5Vp_gAmAZaVS2vhOyhYS5b6j6L14pDwDv507Gxp4";
     const player = new window.Spotify.Player({
       name: "Web Playback SDK Quick Start Player",
       getOAuthToken: cb => {
