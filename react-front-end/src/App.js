@@ -7,7 +7,7 @@ import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Register from './components/registration/Registration';
 import Create from './components/create/Create';
-import Party from './components/party/Party';
+import Party from './components/party_room/Party';
 import './App.css';
 
 class App extends Component {
