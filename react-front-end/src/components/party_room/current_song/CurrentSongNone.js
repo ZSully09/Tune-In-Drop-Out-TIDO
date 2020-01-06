@@ -7,11 +7,5 @@ export default function CurrentSongNone(props) {
   const currentSongNone = classNames('div', {
     playing: props.none
   });
-  return (
-    <div className={currentSongNone}>
-      <div id="artist"></div>
-      <div id="song"></div>
-      <div id="commands"></div>
-    </div>
-  );
+  return <div className={currentSongNone}></div>;
 }
