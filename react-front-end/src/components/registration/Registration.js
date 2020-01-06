@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import './Registration.scss';
 
@@ -21,7 +22,9 @@ export default function Register(props) {
           placeholder="Password Confirmation"
         ></input>
       </form>
-      <button className={createAccountButton}> Create Account</button>
+      <Link to="/">
+        <button className={createAccountButton}> Create Account</button>
+      </Link>
       {/* <button className={loginViaSpotifyButton}> Login with Spotify</button> */}
     </main>
   );
