@@ -9,6 +9,7 @@ import Login from './components/login/Login';
 import Register from './components/registration/Registration';
 import Create from './components/create/Create';
 import Party from './components/party_room/Party';
+import Join from './components/join/Join';
 import './App.css';
 
 class App extends Component {
@@ -115,11 +116,14 @@ class App extends Component {
               onLoad={this.handleScriptLoad.bind(this)}
             />
           </header>
-          <Route path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/create" component={Create} />
-          <Route path="/party" component={Party} />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/create" component={Create} />
+            <Route path="/party" component={Party} />
+            <Route path="/join" component={Join} />
+          </Switch>
         </div>
       </Router>
     );
