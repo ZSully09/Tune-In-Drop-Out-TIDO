@@ -12,6 +12,7 @@ import Create from '../components/create/Create';
 import Party from '../components/party_room/Party';
 import Header from '../components/header/Header';
 import SearchBar from '../components/party_room/search_bar/SearchBar';
+import Song from '../components/party_room/playlist/song/Song';
 
 storiesOf('CurrentSong', module)
   .add('Playing', () => <CurrentSongPlaying></CurrentSongPlaying>)
@@ -31,3 +32,5 @@ storiesOf('Create', module).add('Create', () => <Create></Create>);
 storiesOf('Party', module).add('Party', () => <Party></Party>);
 
 storiesOf('Header', module).add('Header', () => <Header></Header>);
+
+storiesOf('Song', module).add('Song', () => <Song></Song>);
