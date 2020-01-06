@@ -1,8 +1,8 @@
-.div {
+.div--song {
   position: absolute;
-  bottom: 0px;
+  top: 150px;
   background-color: black;
-  height: 60px;
+  height: 50px;
   width: 100%;
   color: white;
   display: flex;
@@ -12,25 +12,25 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.div img {
-  height: 50px;
-  width: 50px;
+.image--song img {
+  height: 30px;
+  width: 30px;
   margin: 10px;
   position: relative;
 }
 
-.div #artist {
-  padding-left: 10px;
+.div--song--name {
   margin: 10px;
 }
 
-.div #song {
+.div--song--artist {
   margin: 10px;
+  font-size: 12px;
 }
 
-.div #commands {
-  margin-right: 10px;
+.button--edit {
+  margin-right: 20px;
   position: absolute;
   right: 0;
-  padding-right: 10px;
+  padding-right: px;
 }
