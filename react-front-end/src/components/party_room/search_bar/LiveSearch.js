@@ -8,9 +8,9 @@ export default function LiveSearch(props) {
   const [term, setTerm] = useState(""); // what we type in
   const [results, setResults] = useState([]); // the results list
   console.log(term);
-  // useEffect(() => {
-  //   axios(`	https://api.spotify.com/v1/search?term=${term} `)
-  // }, [term]);
+  useEffect(() => {
+    axios(`	https://api.spotify.com/v1/search?term=${term} `)
+  }, [term]);
 
   return (
     <Fragment>
