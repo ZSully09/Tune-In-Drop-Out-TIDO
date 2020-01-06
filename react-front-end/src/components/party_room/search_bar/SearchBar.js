@@ -11,8 +11,8 @@ export default function SearchBar(props) {
           placeholder=""
           name="search"
           type="text"
-          
-          onChange={event => setValue(event.target.value)}
+          value={props.term}
+          onChange={event => props.setTerm(event.target.value)}
         />
       </form>
     </section>
