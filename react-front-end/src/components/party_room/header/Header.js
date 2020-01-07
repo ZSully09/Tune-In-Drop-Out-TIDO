@@ -81,7 +81,7 @@ export default function SearchAppBar() {
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <SearchBar />
+              <SearchIcon />
             </div>
             <InputBase
               placeholder="Search...."
