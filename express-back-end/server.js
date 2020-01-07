@@ -10,7 +10,7 @@ App.use(Express.static("public"));
 
 // PG database client/connection setup
 const { Pool } = require("pg");
-const dbParams = require("../database/db");
+const dbParams = require("./knexfile");
 const db = new Pool(dbParams);
 db.connect();
 
