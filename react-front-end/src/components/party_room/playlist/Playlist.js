@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import Header from '../header/Header';
 import CurrentSongNone from '../current_song/CurrentSongNone';
 import CurrentSongPaused from '../current_song/CurrentSongPaused';
@@ -14,7 +13,12 @@ export default function Playlist(props) {
       <h3>Party</h3>
       <Song />
       <footer>
+        {/* IF SONG IS PLAYING */}
         <CurrentSongPlaying />
+        {/* IF SONG IS PAUSED 
+        <CurrentSongPaused /> */}
+        {/* IF THERE IS NO CURRENT SONG
+        <CurrentSongNone /> */}
       </footer>
     </main>
   );
