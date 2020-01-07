@@ -1,4 +1,14 @@
 .song {
+  background-color: black;
+  color: white;
   display: flex;
   align-content: space-between;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px;
+
+}
+
+.song__info {
+
 }
