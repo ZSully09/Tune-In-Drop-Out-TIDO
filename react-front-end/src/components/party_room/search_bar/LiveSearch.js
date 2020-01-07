@@ -10,20 +10,22 @@ export default function LiveSearch(props) {
   useEffect(() => {
     console.log('search',term);
     // hardcoded for test, eventually comes from db
-    const token = 'BQBR7WFAGcuhpKM9BNxC0Ly4KxDGSibNigLqZ7_k-ljN5CKat3nS_M4ULZJg35s9IFn92eHKsh_STtbJbaQcjQ09jpsG5LRYRAjbqPKhRD30aMVkCMgm1O6OeVlb_t_71sOlvAnU9aXxHGbtGhFQcduZEo6yfaiPXugstxVe1V0xS-IH65LW_Ck'
+    const token = 'BQCR3QRS9NelDv7AXUALOpj9ABWD7W4pegOJtelZX7oJPuzofkCZVOKtM1KWpiOnbOO4wjmpFudeyh3GPTVlDyAXMDLmBWw0fEMCxkToHNcVBqE4rlWjtCRc82eEg6FrINeQ48Twf32SIyPIPY-utg-gsujLgiIkJ5BA5sQ9seuU8ej-KdRgHvA'
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
     {
       headers: {Authorization: `Bearer ${token}`}
-    }).then(term => console.log(term))
+    }).then(term => setResults(term.data.tracks.items))
     .catch(err => console.log(err))
   }, [term]);
 
 
   return (
     <Fragment>
-      {/* <SearchBar onSearch={term => setTerm(term)} > */}
-      <SearchBar setTerm={setTerm} term={term}>
+      <SearchBar onSearch={term => setTerm(term)} >
+        
       </SearchBar>
+      
+      <Results results={results}/>
     </Fragment>  
   );
 }
