@@ -1,6 +1,6 @@
 .div--song {
   position: absolute;
-  top: 150px;
+  top: 60px;
   background-color: black;
   height: 50px;
   width: 100%;
@@ -28,9 +28,22 @@
   font-size: 12px;
 }
 
+.div--vote--song {
+  right: 50px;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  // FIX THIS *****************
+  top: 15px;
+}
+
+.button--up--vote {
+  border-style: none;
+}
+
 .button--edit {
   margin-right: 20px;
   position: absolute;
   right: 0;
-  padding-right: px;
+  border-style: none;
 }

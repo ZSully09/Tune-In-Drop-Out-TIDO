@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import { MdModeEdit } from 'react-icons/md';
+import { FaEllipsisV } from 'react-icons/fa';
+import { IoMdThumbsUp } from 'react-icons/io';
 
 import './Song.scss';
 
@@ -9,6 +10,8 @@ export default function Song(props) {
   const songThumbnail = classNames('image--song');
   const songName = classNames('div--song--name');
   const songArtist = classNames('div--song--artist');
+  const voteSong = classNames('div--vote--song');
+  const upVote = classNames('button--up--vote');
   const editButton = classNames('button--edit');
   return (
     <div className={songDiv}>
@@ -17,8 +20,14 @@ export default function Song(props) {
       </div>
       <div className={songName}>Ultra Sound</div>
       <div className={songArtist}>Joyner Lucas</div>
+      <div className={voteSong}>
+        <button className={upVote}>
+          # &nbsp;&nbsp;
+          <IoMdThumbsUp />
+        </button>
+      </div>
       <button className={editButton}>
-        <MdModeEdit />
+        <FaEllipsisV />
       </button>
     </div>
   );
