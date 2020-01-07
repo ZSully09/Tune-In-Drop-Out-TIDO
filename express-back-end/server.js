@@ -1,16 +1,16 @@
-const Express = require("express");
+const Express = require('express');
 // const App = Express();
-const BodyParser = require("body-parser");
-const App = require("../express-back-end/auth-server/authorization_code/app");
+const BodyParser = require('body-parser');
+const App = require('../express-back-end/auth-server/authorization_code/app');
 const PORT = 8888;
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
-App.use(Express.static("public"));
+App.use(Express.static('public'));
 
 // PG database client/connection setup
-const { Pool } = require("pg");
-const dbParams = require("./knexfile");
+const { Pool } = require('pg');
+const dbParams = require('./knexfile');
 const db = new Pool(dbParams);
 db.connect();
 
