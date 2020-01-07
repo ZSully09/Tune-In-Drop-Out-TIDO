@@ -1,4 +1,5 @@
-//add new user to db
+//user
+//add
 const bcrypt = require("bcrypt");
 
 const addUser = function(user, db) {
@@ -25,11 +26,26 @@ const getUserByEmail = function(email, db) {
   );
 };
 
-// Get user by client_id used to show a users email in the header.
+// get user by client_id
 const getUserById = function(client_id, db) {
   return db.query(
     `
   SELECT * FROM users WHERE client_id=$1`,
     [`${id}`]
+  );
+};
+
+//songs
+//
+
+const getTrackItemById = function(track_id, db) {
+  return db.query(
+    `
+    SELECT * FROM songs
+    JOIN books
+    ON items.id = item_id
+    WHERE item_id = $1;
+    `,
+    [`${item_id}`]
   );
 };
