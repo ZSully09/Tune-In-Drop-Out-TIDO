@@ -4,9 +4,10 @@ const BodyParser = require("body-parser");
 const App = require("../express-back-end/auth-server/authorization_code/app");
 const PORT = 8888;
 
+
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
-App.use(Express.static("public"));
+App.use(Express.static("public"))
 
 // PG database client/connection setup
 const { Pool } = require("pg");
