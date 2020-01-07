@@ -1,8 +1,5 @@
--- Drop and recreate Users table (Example)
 DROP TABLE IF EXISTS users
 CASCADE;
-
-
 
 CREATE TABLE users
 (
@@ -10,5 +7,6 @@ CREATE TABLE users
   name varchar(255) NOT NULL,
   email varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
-  spotify_client_id varchar(255)
+  -- REQUIRED IN ORDER TO FIND A USERS PROFILE???
+  spotify_uuid varchar(255)
 );
