@@ -21,7 +21,8 @@ export default function LiveSearch(props) {
 
   return (
     <Fragment>
-      <SearchBar onSearch={term => setTerm(term)} >
+      {/* <SearchBar onSearch={term => setTerm(term)} > */}
+      <SearchBar setTerm={setTerm} term={term}>
       </SearchBar>
     </Fragment>  
   );

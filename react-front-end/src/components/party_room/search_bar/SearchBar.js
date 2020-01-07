@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './SearchBar.scss';
-import useDebounce from "../../../hooks/useDebounce";
+// import useDebounce from "../../../hooks/useDebounce";
 
 export default function SearchBar(props) {
-  const [value, setValue] = useState("");
-  const term = useDebounce(value, 400);
+  // const [value, setValue] = useState("");
+  // const term = useDebounce(value, 400);
 
-  const onSearch = useCallback(props.onSearch, [term]);
+  // const onSearch = useCallback(props.onSearch, [term]);
 
-  useEffect(() => {
-    onSearch(term);
-  }, [term, onSearch]);
+  // useEffect(() => {
+  //   onSearch(term);
+  // }, [term, onSearch]);
 
   return (
     <section className="search">
@@ -22,7 +22,7 @@ export default function SearchBar(props) {
           name="search"
           type="text"
           value={props.term}
-          onChange={event => props.setValue(event.target.value)}
+          onChange={event => props.setTerm(event.target.value)}
         />
       </form>
     </section>
