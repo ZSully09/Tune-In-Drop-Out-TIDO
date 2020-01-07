@@ -14,9 +14,9 @@ const dbParams = require("./knexfile");
 const db = new Pool(dbParams);
 db.connect();
 
-app.get("/", (request, response) => {
-  response.json({ info: "Node.js, Express, and Postgres API" });
-});
+// app.get("/", (request, response) => {
+//   response.json({ info: "Node.js, Express, and Postgres API" });
+// });
 
 // // Sample GET route
 // App.get("/api/data", (req, res) =>
