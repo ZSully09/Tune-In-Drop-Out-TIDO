@@ -10,9 +10,11 @@ import Login from '../components/login/Login';
 import Register from '../components/registration/Registration';
 import Create from '../components/create/Create';
 import Party from '../components/party_room/Party';
-import Header from '../components/header/Header';
+import Header from '../components/party_room/header/Header';
 import SearchBar from '../components/party_room/search_bar/SearchBar';
 import LiveSearch from '../components/party_room/search_bar/LiveSearch';
+import Song from '../components/party_room/playlist/song/Song';
+import Playlist from '../components/party_room/playlist/Playlist';
 
 storiesOf('CurrentSong', module)
   .add('Playing', () => <CurrentSongPlaying></CurrentSongPlaying>)
@@ -34,3 +36,6 @@ storiesOf('Party', module).add('Party', () => <Party></Party>);
 storiesOf('Header', module).add('Header', () => <Header></Header>);
 
 storiesOf('search', module).add('Searching', () => <LiveSearch></LiveSearch>)
+storiesOf('Song', module).add('Song', () => <Song></Song>);
+
+storiesOf('Playlist', module).add('Playlist', () => <Playlist></Playlist>);
