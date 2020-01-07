@@ -1,5 +1,6 @@
 import React from "react";
 import classnames from "classnames";
+import './Song.scss'
 
 export default function Song(props) {
   console.log(props)
@@ -7,7 +8,7 @@ export default function Song(props) {
 
   return (
     // needs an onClick in article tag
-    <article className="song" > 
+    <article className="song" onClick={sendToPlaylist}> 
       <img className="song__thumbnail" src={props.album.images[2].url}/>
       <div className="song__info">
         <div className="song__name">{props.name}</div>
