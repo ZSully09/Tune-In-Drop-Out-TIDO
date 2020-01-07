@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import './Home.scss';
 
@@ -8,8 +9,12 @@ export default function Home(props) {
   return (
     <main>
       <h3> TiDo </h3>
-      <button className={newPartyButton}> New Party </button>
-      <button className={joinPartyButton}> Join a Party </button>
+      <Link to="/create">
+        <button className={newPartyButton}> New Party </button>
+      </Link>
+      <Link to="/join">
+        <button className={joinPartyButton}> Join a Party </button>
+      </Link>
     </main>
   );
 }

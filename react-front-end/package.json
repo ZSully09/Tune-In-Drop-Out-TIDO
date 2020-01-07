@@ -11,9 +11,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.8.0",
+    "react-load-script": "0.0.6",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.8",
-    "react-spotify-api": "^2.4.0"
+    "react-spotify-login": "^0.9.1"
   },
   "scripts": {
     "start": "react-scripts start",

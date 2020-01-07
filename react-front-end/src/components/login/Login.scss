@@ -1,4 +1,4 @@
-main {
+div.login-page {
   background-color: black;
   height: 100%;
   width: 100%;
@@ -8,10 +8,16 @@ main {
   text-align: center;
 }
 
+h1 {
+  padding-bottom: 50px;
+}
+
 input {
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
+  border-radius: 20px;
+  width: 150px;
 }
 
 button:hover {
@@ -19,7 +25,18 @@ button:hover {
   cursor: pointer;
 }
 
-.button--spotify {
-  width: 100px;
-  height: 50px;
+.button--login {
+  width: 150px;
+  height: 30px;
+}
+
+.button--spotify--login {
+  width: 150px;
+  height: 30px;
+}
+
+button img {
+  height: 15px;
+  width: 15px;
+  vertical-align: middle;
 }

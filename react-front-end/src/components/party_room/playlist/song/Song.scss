@@ -1,0 +1,49 @@
+.div--song {
+  position: absolute;
+  top: 60px;
+  background-color: black;
+  height: 50px;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.image--song img {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  position: relative;
+}
+
+.div--song--name {
+  margin: 10px;
+}
+
+.div--song--artist {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.div--vote--song {
+  right: 50px;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  // FIX THIS *****************
+  top: 15px;
+}
+
+.button--up--vote {
+  border-style: none;
+}
+
+.button--edit {
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+  border-style: none;
+}

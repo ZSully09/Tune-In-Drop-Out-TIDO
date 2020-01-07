@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import './Create.scss';
 
@@ -13,7 +14,9 @@ export default function Create(props) {
       <form className={createPartyForm}>
         <input className={partyName} placeholder="Party Name"></input>
         <input className={partyAccessCode} placeholder="Access Code"></input>
-        <button className={createNewPartyButton}> New Party </button>
+        <Link to="/party">
+          <button className={createNewPartyButton}> New Party </button>
+        </Link>
       </form>
     </main>
   );

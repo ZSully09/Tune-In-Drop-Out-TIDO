@@ -8,6 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -66,7 +67,7 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: 'grey' }}>
+      <AppBar position="static" style={{ backgroundColor: 'black' }}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -84,7 +85,7 @@ export default function SearchAppBar() {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search...."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput
