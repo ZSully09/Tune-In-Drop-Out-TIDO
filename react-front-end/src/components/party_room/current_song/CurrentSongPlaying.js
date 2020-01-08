@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
+import { MdPause, MdSkipNext } from 'react-icons/md';
 
 import './CurrentSong.scss';
 
@@ -10,7 +10,10 @@ export default function CurrentSongPlaying(props) {
   });
   return (
     <div className={currentSongPlaying}>
-      <img src="https://s3.amazonaws.com/factmag-images/wp-content/uploads/2019/11/Stormzy-Art-big.jpg"></img>
+      <img
+        alt=""
+        src="https://s3.amazonaws.com/factmag-images/wp-content/uploads/2019/11/Stormzy-Art-big.jpg"
+      ></img>
 
       <div id="song">Wiley Flow</div>
       <div id="artist">Stormzy</div>
