@@ -9,6 +9,7 @@ export default function Register(props) {
   const password = classNames('input--password');
   const passwordConfirmation = classNames('input--password--confirmation');
   const createAccountButton = classNames('button--create--account');
+
   return (
     <div>
       <h3> TiDo Registration </h3>

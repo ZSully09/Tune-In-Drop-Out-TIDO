@@ -4,11 +4,11 @@ import SpotifyLogin from 'react-spotify-login';
 import classNames from 'classnames';
 import './Login.scss';
 class LoginPage extends Component {
-  // onSubmit = () => {
-  //   // if (userFound) {
-  //   return <Redirect to="/" />;
-  //   // }
-  // };
+  onSubmit = () => {
+    // if (userFound) {
+    return <Redirect to="/" />;
+    // }
+  };
 
   constructor(props) {
     super(props);
