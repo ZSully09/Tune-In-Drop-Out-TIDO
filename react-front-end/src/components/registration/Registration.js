@@ -11,13 +11,18 @@ export default function Register(props) {
   const createAccountButton = classNames('button--create--account');
   // const loginViaSpotifyButton = classNames('button--spotify--login');
   return (
-    <main>
+    <div>
       <h3> TiDo Registration </h3>
       {/* Add action, method="POST" to the form */}
       <form className={register}>
-        <input className={email} placeholder="Email"></input>
-        <input className={password} placeholder="Password"></input>
+        <input type="email" className={email} placeholder="Email"></input>
         <input
+          type="password"
+          className={password}
+          placeholder="Password"
+        ></input>
+        <input
+          type="password"
           className={passwordConfirmation}
           placeholder="Password Confirmation"
         ></input>
@@ -25,7 +30,12 @@ export default function Register(props) {
       <Link to="/">
         <button className={createAccountButton}> Create Account</button>
       </Link>
-      {/* <button className={loginViaSpotifyButton}> Login with Spotify</button> */}
-    </main>
+      <div>
+        Already have an account? Login&nbsp;
+        <a href="http://localhost:3000/login">
+          <u>here!</u>
+        </a>
+      </div>
+    </div>
   );
 }
