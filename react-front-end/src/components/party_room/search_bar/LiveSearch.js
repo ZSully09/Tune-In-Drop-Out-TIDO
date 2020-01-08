@@ -10,7 +10,7 @@ export default function LiveSearch(props) {
   useEffect(() => {
     console.log('search',term);
     // hardcoded for test, eventually comes from db
-    const token = 'BQCNHmUTcNDcDr203z8nfmUSH_3hDl5s45xrwkYuJr0MvHaAoqxyaYCo84Mhs80QeMmHUVy-qDX_yDBCM5fttPJqEbhAKo118iQ9HcqR5iaItU1OaTxo9auzGQboXPGFCjHLqSbyOiecmSjYL7sPsorOXhe-AZYIGY_R1ZkZVTYLhZiDleG5eBg'
+    const token = 'BQBGALZSfF-4dT1KuYUJsnkw5FqTFXEISCHvYFrm4HWAEpP_PI0HUCdRWwPstanZzaF6x-mySnFdeRq-w62isQNjWRquTukIae-jTlcZvU64PahL_abU6uHhqtwsjBxjD9hiUyWBbcOFvH2hzXtYC-yvnwYvfbu80I7JmJOOWGe1dEcqgwPmvD8'
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
     {
       headers: {Authorization: `Bearer ${token}`}
