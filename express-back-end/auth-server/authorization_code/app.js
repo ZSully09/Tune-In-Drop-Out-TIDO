@@ -16,7 +16,7 @@ const usersRouter = require("../../routes/users");
 const partyRouter = require("../../routes/party");
 const bodyParser = require("body-parser");
 const app = express();
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 4000;
 
 var client_id = "a76465e0c0664e9cbb1f73f06912c134"; // Your client id
 var client_secret = "6c0b0db113244ed387c769d4b195cbe0"; // Your secret
@@ -39,8 +39,6 @@ var generateRandomString = function(length) {
 };
 
 var stateKey = "spotify_auth_state";
-
-var app = express();
 
 app
   .use(express.static(__dirname + "/public"))
@@ -160,11 +158,13 @@ app.get("/refresh_token", function(req, res) {
   });
 });
 
-app
-  .use(bodyParser.json())
-  .use(usersRouter)
-  .use(partyRouter)
-  .listen(port, () => console.log(`Listening on port ${port}`));
+// app
+//   .use(bodyParser.json())
+//   .use(usersRouter)
+//   .use(partyRouter)
+//   .listen(port, () => console.log(`Listening on port ${port}`));
 
-console.log("Listening on 8888");
-app.listen(8888);
+// console.log("Listening on 8888");
+// app.listen(8888);
+
+module.exports = app;

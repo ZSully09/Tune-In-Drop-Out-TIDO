@@ -1,13 +1,13 @@
 INSERT INTO users
   (name, email, password)
 VALUES
-  ('Chris Drysdale', 'chris.drysdale12@gmail.com', ''),
-  ('Nick Hoszko', 'nhoszko@gmail.com', ''),
-  ('Zach Sullivan', 'zsullivan93@gmail.com', 'zsullivan93')
+  ('Chris Drysdale', 'chris.drysdale12@gmail.com', 'chrise_d'),
+  ('Nick Hoszko', 'nhoszko@gmail.com', 'douche'),
+  ('Zach Sullivan', 'test@test.com', 'password')
 
 
-INSERT INTO party
-(id, name, genre, duration_time, bpm_minimum, user_id)
-  ()
+-- INSERT INTO party
+-- (id, name, genre, duration_time, bpm_minimum, user_id)
+--   ()
 
-INSERT INTO 
+-- INSERT INTO 
