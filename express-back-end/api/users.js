@@ -1,7 +1,14 @@
+// load .env data into process.env
+require("dotenv").config();
+
 const express = require("express");
 const router = express.Router();
 
-const User = require("../models/User");
+// PG database client/connection setup
+const { Pool } = require("pg");
+const dbParams = require("./lib/db.js");
+const db = new Pool(dbParams);
+db.connect();
 
 router.get("/users", (req, res) => {
   User.query().then(users => {
@@ -13,7 +20,6 @@ router.get("/users/:id", (req, res) => {
   let id = parseInt(req.params.id);
   User.query()
     .where("id", id)
-    .eager("messages")
     .then(user => {
       res.json(user);
     });
