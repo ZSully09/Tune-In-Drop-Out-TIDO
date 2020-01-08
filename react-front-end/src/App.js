@@ -94,7 +94,7 @@ class App extends Component {
   render() {
     return (
       // Change to true to force redirection to party page without being logged in
-      <AuthContext.Provider value={true}>
+      <AuthContext.Provider value={false}>
         <Router>
           <div className="App">
             <header className="App-header">
