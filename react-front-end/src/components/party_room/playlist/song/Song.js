@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import classNames from 'classnames';
 import { FaEllipsisV } from 'react-icons/fa';
 import { IoMdThumbsUp } from 'react-icons/io';
@@ -13,6 +14,13 @@ export default function Song(props) {
   const voteSong = classNames('div--vote--song');
   const upVote = classNames('button--up--vote');
   const editButton = classNames('button--edit');
+
+  // TEST AXIOS CALL
+  useEffect(() => {
+    axios.get('/api/track').then(res => setState(res.data));
+  }, []);
+
+  const [state, setState] = useState('');
   return (
     <div className={songDiv}>
       <div className={songThumbnail}>
@@ -29,6 +37,7 @@ export default function Song(props) {
       <button className={editButton}>
         <FaEllipsisV />
       </button>
+      <p>{state}</p>
     </div>
   );
 }
