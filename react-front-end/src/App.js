@@ -1,6 +1,5 @@
-import React, { Component, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Script from 'react-load-script';
 import PrivateRoute from './components/party_room/PrivateRoute';
 import Home from './components/home/Home';
