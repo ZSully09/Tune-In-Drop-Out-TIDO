@@ -1,8 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
 import Header from './header/Header';
-import CurrentSongNone from './current_song/CurrentSongNone';
-import CurrentSongPaused from './current_song/CurrentSongPaused';
+// import CurrentSongNone from './current_song/CurrentSongNone';
+// import CurrentSongPaused from './current_song/CurrentSongPaused';
 import CurrentSongPlaying from './current_song/CurrentSongPlaying';
 import Song from './playlist/song/Song';
 import './Party.scss';
