@@ -4,14 +4,16 @@ import classNames from 'classnames';
 import './Registration.scss';
 
 export default function Register(props) {
+  const registerPage = classNames('div--register');
   const register = classNames('form--register');
   const email = classNames('input--email');
   const password = classNames('input--password');
   const passwordConfirmation = classNames('input--password--confirmation');
   const createAccountButton = classNames('button--create--account');
+  const pageSwap = classNames('div--swap');
 
   return (
-    <div>
+    <div className={registerPage}>
       <h3> TiDo Registration </h3>
       {/* Add action, method="POST" to the form */}
       <form className={register}>
@@ -32,7 +34,7 @@ export default function Register(props) {
       </Link>
       <div>
         Already have an account? Login&nbsp;
-        <a href="http://localhost:3000/login">
+        <a href="http://localhost:3000/login" className={pageSwap}>
           <u>here!</u>
         </a>
       </div>
