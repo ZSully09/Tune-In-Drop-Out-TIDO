@@ -51,23 +51,29 @@ class LoginPage extends Component {
               className={password}
               placeholder="Password"
             ></input>
-            <Link to="/">
-              <button className={loginButton} onClick={this.onSubmit}>
-                Login
-              </button>
-            </Link>
-            <Link to="/">
-              <SpotifyLogin
-                type="button"
-                className={spotifyLoginButton}
-                buttonText={buttonText}
-                clientId={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
-                redirectUri={process.env.REACT_APP_SPOTIFY_REDIRECT_URI}
-                scope={process.env.REACT_APP_SPOTIFY_SCOPE}
-                onSuccess={onSuccess}
-                onFailure={onFailure}
-              />
-            </Link>
+            <div className="button-div">
+              <div>
+                <Link to="/">
+                  <button className={loginButton} onClick={this.onSubmit}>
+                    Login
+                  </button>
+                </Link>
+              </div>
+              <div>
+                <Link to="/">
+                  <SpotifyLogin
+                    type="button"
+                    className={spotifyLoginButton}
+                    buttonText={buttonText}
+                    clientId={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
+                    redirectUri={process.env.REACT_APP_SPOTIFY_REDIRECT_URI}
+                    scope={process.env.REACT_APP_SPOTIFY_SCOPE}
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                  />
+                </Link>
+              </div>
+            </div>
           </form>
         </section>
         <div>

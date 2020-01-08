@@ -20,7 +20,7 @@ button {
   border-radius: 20px;
   outline: none;
   opacity: 0.8;
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -38,4 +38,9 @@ button:hover {
 .button--join {
   width: 100px;
   height: 50px;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: column;
 }
