@@ -66,6 +66,10 @@ class LoginPage extends Component {
             </Link>
           </form>
         </section>
+        <div>
+          Don't have an account? Create one&nbsp;
+          <a href="http://localhost:3000/register">here! </a>
+        </div>
       </div>
     );
   }
