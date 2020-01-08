@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchBar.scss';
+import useDebounce from "../../../hooks/useDebounce";
 
-export default function SearchBar(props) {
+export default function SearchBar({
+  term,
+  onSearch
+}) {
+
+  const [value, setValue] = useState(term);
+  const debouncedTerm = useDebounce(value, 1000);
+
+  useEffect(() => onSearch(debouncedTerm), [debouncedTerm, onSearch]);
+
   return (
     <section className="search">
-      <form className="search__form" onSubmit={event => event.preventDefault()}>
-        <input
-          className="radius"
-          spellCheck="false"
-          placeholder=""
-          name="search"
-          type="text"
-          value={props.term}
-          onChange={event => props.setTerm(event.target.value)}
-        />
-      </form>
+      <input
+        className="radius"
+        spellCheck="false"
+        placeholder=""
+        name="search"
+        type="text"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
     </section>
   );
 }

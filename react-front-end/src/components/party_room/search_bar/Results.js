@@ -1,11 +1,11 @@
 import React from "react";
 
-import Song from "./Song";
+import DropDownSong from "./DropDownSong";
 
 export default function Results(props) {
   const { results } = props;
 
   return results.map(song => {
-    return <Song key={song.collectionId} {...song} />;
+    return <DropDownSong key={song.collectionId} {...song} />;
   });
 }
