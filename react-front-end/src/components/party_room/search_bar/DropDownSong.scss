@@ -4,7 +4,17 @@
   display: flex;
   align-content: space-between;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 5px;
+  font-family: 'Josefin Sans', sans-serif;
 
+}
+
+.song__info {
+  padding: 10px;
+}
+
+.song__name {
+  padding-bottom: 5px;
+  font-size: 20px;
 }
