@@ -45,8 +45,12 @@ class LoginPage extends Component {
         <h1>TiDo</h1>
         <section className="login-form">
           <form className={login}>
-            <input className={email} placeholder="Email"></input>
-            <input className={password} placeholder="Password"></input>
+            <input type="email" className={email} placeholder="Email"></input>
+            <input
+              type="password"
+              className={password}
+              placeholder="Password"
+            ></input>
             <Link to="/">
               <button className={loginButton} onClick={this.onSubmit}>
                 Login
@@ -68,7 +72,9 @@ class LoginPage extends Component {
         </section>
         <div>
           Don't have an account? Create one&nbsp;
-          <a href="http://localhost:3000/register">here! </a>
+          <a href="http://localhost:3000/register">
+            <u>here!</u>
+          </a>
         </div>
       </div>
     );
