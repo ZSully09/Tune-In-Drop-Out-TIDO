@@ -20,6 +20,7 @@
     "nodemon": "^1.18.7",
     "pg": "^6.4.2",
     "querystring": "~0.2.0",
-    "request": "~2.83.0"
+    "request": "~2.83.0",
+    "objection": "^1.6.8"
   }
 }
