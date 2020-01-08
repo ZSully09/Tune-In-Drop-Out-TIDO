@@ -10,3 +10,5 @@ CREATE TABLE users
   -- REQUIRED IN ORDER TO FIND A USERS PROFILE???
   spotify_uuid varchar(255)
 );
+
+
