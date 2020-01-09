@@ -7,9 +7,10 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import SearchBar from '../search_bar/SearchBar';
+import CurrentSong from '../../party_room/current_song/CurrentSongPlaying';
+
 import LiveSearch from '../search_bar/LiveSearch';
-import Results from '../search_bar/Results';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -87,22 +88,16 @@ export default function SearchAppBar() {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search...."
+              // placeholder="Search...."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput
                 
               }}
-              inputProps={{ 'aria-label': 'seaearch' }}
+              // inputProps={{ 'aria-label': 'seaearch' }}
             />
-              return (
-    <Fragment>
-      <SearchBar onSearch={term => setTerm(term)} > 
-      </SearchBar>
-      <Results results={results}/>
-    </Fragment>  
-  );
-            
+            {/* <LiveSearch /> */}
+            {/* <CurrentSong /> */}
           </div>
         </Toolbar>
       </AppBar>
