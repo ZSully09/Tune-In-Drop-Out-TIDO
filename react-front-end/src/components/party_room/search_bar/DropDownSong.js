@@ -5,7 +5,7 @@ import { useToasts } from 'react-toast-notifications';
  
 
 export default function DropDownSong(props) {
-  console.log(props)
+  
   const { addToast } = useToasts();
 
   const setSong = () => {
@@ -16,7 +16,7 @@ export default function DropDownSong(props) {
       songThumbnail: props.album.images[2].url
     }
     addToast(`${song.songName} was added to the playlist`, {appearance: 'success', autoDismiss: true});
-    console.log(song);
+    
   }
 
   return (

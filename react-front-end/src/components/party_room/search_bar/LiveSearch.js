@@ -7,10 +7,15 @@ import Results from "./Results";
 export default function LiveSearch(props) {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
+
   useEffect(() => {
-    console.log('search',term);
+    if (!term) {
+      setResults([]);
+      return
+    }
+    
     // hardcoded for test, eventually comes from db
-    const token = 'BQBSxIAAOIQSkF5SNM5gKJnV_4PjoF48V75sYMy7R1qFKVIKBwcBSgeu8DMF6CdmbwNBNUC1QIbvdtlcHhGUwTGHXL7MJZFtLiUoiyphpcDvztnWB3qYVAWJDg_Y-E-MRhMMlkvsSoCKCvO_Mr2LNtW8aSrvv-fTvtGdEksjMmbWCp-2_RQnQ78'
+    const token = 'BQAwmvjZlPwpzVl-ydOV07G9b1F58U1T5yLW4BlI9WIy8S5RQkJZjFwW1hwZ7GIfybtCzgl6BluOn5l4iEuntP3x1-U3_ykVlZANtIuY9ri2mGFAJZ4VEdd6K-ZJol40vkXI0U7YJLGJ0zHBk3kskFFZqyygId-QlMs3kaQ8GUcd8rZERAUDaXw'
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
     {
       headers: {Authorization: `Bearer ${token}`}
