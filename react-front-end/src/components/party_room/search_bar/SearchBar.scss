@@ -12,18 +12,18 @@
 	transition: all 200ms ease;
 	cursor: text;
 	
-	&:after {
-		content: "";
-		position: absolute;
-		width: 3px;
-		height: 20px;
-		right: -5px;
-		top: 21px;
-		background: black;
-		border-radius: 3px;
-		transform: rotate(-45deg);
-		transition: all 200ms ease;
-	}
+	// &:after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	width: 3px;
+	// 	height: 20px;
+	// 	right: -5px;
+	// 	top: 21px;
+	// 	background: black;
+	// 	border-radius: 3px;
+	// 	// transform: rotate(-45deg);
+	// 	transition: all 200ms ease;
+	// }
 	
 	&.active,
 	&:hover {
