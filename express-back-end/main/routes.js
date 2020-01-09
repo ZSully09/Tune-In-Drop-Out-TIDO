@@ -1,10 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var pool = require('./db');
-
+var client = require('./db');
+const bcrypt = require('bcrypt');
 /*
   USER PROFILE SECTION
 */
+
+// const getUserByEmail = function(email, client) {
+//   return client.query(
+//     `
+//   SELECT * FROM users WHERE email=$1`,
+//     [`${email}`]
+//   );
+// };
 
 router.post('/api/post/users', (req, res, next) => {
   const values = [
@@ -12,34 +20,42 @@ router.post('/api/post/users', (req, res, next) => {
     req.body.profile.email,
     req.body.profile.password
   ];
-  pool.query(
-    `INSERT INTO users(name, email, password)
+  client
+    .query(
+      `INSERT INTO users(name, email, password)
               VALUES($1, $2, $3)
               ON CONFLICT DO NOTHING`,
-    values,
-    (q_err, q_res) => {
-      res.json(q_res.rows);
-    }
-  );
+      values
+    )
+    .then(result => {
+      console.log('result', result);
+      res.json(result.rows);
+    })
+    .catch(error => {
+      console.log('error', error);
+      res.send(500);
+    });
 });
 
-router.get('/api/get/users', (req, res, next) => {
+router.get('/api/users', (req, res, next) => {
   const email = req.query.email;
-  console.log(email);
-  pool.query(
-    `SELECT * FROM users
-              WHERE email=$1`,
-    [email],
-    (q_err, q_res) => {
-      res.json(q_res.rows);
-    }
-  );
+  console.log('sdfs');
+  client
+    .query(`SELECT * FROM users`)
+    .then(result => {
+      console.log('result', result);
+      res.json(result.rows);
+    })
+    .catch(error => {
+      console.log('error', error);
+      res.send(500);
+    });
 });
 
 // router.get('/api/get/userposts', (req, res, next) => {
 //   const user_id = req.query.user_id;
 //   console.log(user_id);
-//   pool.query(
+//   client.query(
 //     `SELECT * FROM posts
 //               WHERE user_id=$1`,
 //     [user_id],
@@ -53,7 +69,7 @@ router.get('/api/get/users', (req, res, next) => {
 // router.get('/api/get/otheruserprofilefromdb', (req, res, next) => {
 //   // const email = [ "%" + req.query.email + "%"]
 //   const username = String(req.query.username);
-//   pool.query(
+//   client.query(
 //     `SELECT * FROM users
 //               WHERE username = $1`,
 //     [username],
@@ -66,7 +82,7 @@ router.get('/api/get/users', (req, res, next) => {
 // //Get another user's posts based on username
 // router.get('/api/get/otheruserposts', (req, res, next) => {
 //   const username = String(req.query.username);
-//   pool.query(
+//   client.query(
 //     `SELECT * FROM posts
 //               WHERE author = $1`,
 //     [username],
@@ -80,6 +96,10 @@ router.get('/api/tracks', (req, res) => {
   res.json('Winter Blues Joyner Lucas');
 });
 
+router.get('/api/users', (req, res, next) => {
+  client.query(`SELECT * FROM users`);
+});
+
 router.get('/api/home', (req, res) => {
   res.json('Winter Blues Joyner Lucas');
 });
@@ -89,7 +109,7 @@ router.get('/api/home', (req, res) => {
 */
 
 // router.get('/api/get/allposts', (req, res, next) => {
-//   pool.query(
+//   client.query(
 //     `SELECT * FROM posts
 //               ORDER BY date_created DESC`,
 //     (q_err, q_res) => {
@@ -101,7 +121,7 @@ router.get('/api/home', (req, res) => {
 // router.get('/api/get/post', (req, res, next) => {
 //   const post_id = req.query.post_id;
 
-//   pool.query(
+//   client.query(
 //     `SELECT * FROM posts
 //               WHERE pid=$1`,
 //     [post_id],
@@ -118,7 +138,7 @@ router.get('/api/home', (req, res) => {
 //     req.body.uid,
 //     req.body.username
 //   ];
-//   pool.query(
+//   client.query(
 //     `INSERT INTO posts(title, body, user_id, author, date_created)
 //               VALUES($1, $2, $3, $4, NOW() )`,
 //     values,
@@ -137,7 +157,7 @@ router.get('/api/home', (req, res) => {
 //     req.body.pid,
 //     req.body.username
 //   ];
-//   pool.query(
+//   client.query(
 //     `UPDATE posts SET title= $1, body=$2, user_id=$3, author=$5, date_created=NOW()
 //               WHERE pid = $4`,
 //     values,
@@ -150,7 +170,7 @@ router.get('/api/home', (req, res) => {
 
 // router.delete('/api/delete/postcomments', (req, res, next) => {
 //   const post_id = req.body.post_id;
-//   pool.query(
+//   client.query(
 //     `DELETE FROM comments
 //               WHERE post_id = $1`,
 //     [post_id],
@@ -163,7 +183,7 @@ router.get('/api/home', (req, res) => {
 
 // router.delete('/api/delete/post', (req, res, next) => {
 //   const post_id = req.body.post_id;
-//   pool.query(`DELETE FROM posts WHERE pid = $1`, [post_id], (q_err, q_res) => {
+//   client.query(`DELETE FROM posts WHERE pid = $1`, [post_id], (q_err, q_res) => {
 //     res.json(q_res.rows);
 //     console.log(q_err);
 //   });
@@ -175,7 +195,7 @@ router.get('/api/home', (req, res) => {
 
 //   const values = [uid, post_id];
 //   console.log(values);
-//   pool.query(
+//   client.query(
 //     `UPDATE posts
 //               SET like_user_id = like_user_id || $1, likes = likes + 1
 //               WHERE NOT (like_user_id @> $1)
@@ -201,7 +221,7 @@ router.get('/api/home', (req, res) => {
 //     req.body.post_id
 //   ];
 
-//   pool.query(
+//   client.query(
 //     `INSERT INTO comments(comment, user_id, author, post_id, date_created)
 //               VALUES($1, $2, $3, $4, NOW())`,
 //     values,
@@ -221,7 +241,7 @@ router.get('/api/home', (req, res) => {
 //     req.body.cid
 //   ];
 
-//   pool.query(
+//   client.query(
 //     `UPDATE comments SET comment = $1, user_id = $2, post_id = $3, author = $4, date_created=NOW()
 //               WHERE cid=$5`,
 //     values,
@@ -235,7 +255,7 @@ router.get('/api/home', (req, res) => {
 // router.delete('/api/delete/comment', (req, res, next) => {
 //   const cid = req.body.comment_id;
 //   console.log(cid);
-//   pool.query(
+//   client.query(
 //     `DELETE FROM comments
 //               WHERE cid=$1`,
 //     [cid],
@@ -248,7 +268,7 @@ router.get('/api/home', (req, res) => {
 
 // router.get('/api/get/allpostcomments', (req, res, next) => {
 //   const post_id = String(req.query.post_id);
-//   pool.query(
+//   client.query(
 //     `SELECT * FROM comments
 //               WHERE post_id=$1`,
 //     [post_id],
