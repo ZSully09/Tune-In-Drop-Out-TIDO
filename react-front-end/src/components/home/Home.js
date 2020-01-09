@@ -11,7 +11,7 @@ export default function Home(props) {
 
   // TEST AXIOS CALL
   useEffect(() => {
-    axios.get('/api/track').then(res => setState(res.data));
+    axios.get('/api/tracks').then(res => setState(res.data));
   }, []);
 
   const [state, setState] = useState('');

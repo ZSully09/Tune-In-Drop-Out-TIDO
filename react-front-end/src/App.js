@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Script from 'react-load-script';
-import PrivateRoute from './components/party_room/PrivateRoute';
-import Home from './components/home/Home';
+// import PrivateRoute from './components/party_room/PrivateRoute';
+// import Home from './components/home/Home';
 // import Create from './components/Create';
 // import Party from './components/Party';
-import Login from './components/login/Login';
-import Register from './components/registration/Registration';
-import Create from './components/create/Create';
-import Party from './components/party_room/Party';
-import Join from './components/join/Join';
+// import Login from './components/login/Login';
+// import Register from './components/registration/Registration';
+// import Create from './components/create/Create';
+// import Party from './components/party_room/Party';
+// import Join from './components/join/Join';
 import './App.css';
-import { AuthContext } from './context/auth';
+// import { AuthContext } from './OLD -- context/auth';
+
+import ContextState from './context_state_config';
 
 class App extends Component {
   constructor(props) {
@@ -93,29 +95,15 @@ class App extends Component {
 
   render() {
     return (
-      // Change to true to force redirection to party page without being logged in
-      <AuthContext.Provider value={true}>
-        <Router>
-          <div className="App">
-            <header className="App-header">
-              <Script
-                url="https://sdk.scdn.co/spotify-player.js"
-                onCreate={this.handleScriptCreate.bind(this)}
-                onError={this.handleScriptError.bind(this)}
-                onLoad={this.handleScriptLoad.bind(this)}
-              />
-            </header>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/create" component={Create} />
-              <PrivateRoute path="/party" component={Party} />
-              <Route path="/join" component={Join} />
-            </Switch>
-          </div>
-        </Router>
-      </AuthContext.Provider>
+      <div>
+        <Script
+          url="https://sdk.scdn.co/spotify-player.js"
+          onCreate={this.handleScriptCreate.bind(this)}
+          onError={this.handleScriptError.bind(this)}
+          onLoad={this.handleScriptLoad.bind(this)}
+        />
+        <ContextState />
+      </div>
     );
   }
 }
