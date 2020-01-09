@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import history from './utils/history';
+// import history from './utils/history';
 
 import Context from './utils/context';
-import AuthCheck from './utils/authcheck';
+// import AuthCheck from './utils/authcheck';
 import PrivateRoute from './components/party_room/PrivateRoute';
 import Home from './components/home/Home';
 // import Create from './components/Create';
@@ -29,7 +29,7 @@ import { AuthContext } from './OLD -- context/auth';
 // );
 
 const Routes = () => {
-  const context = useContext(Context);
+  // const context = useContext(Context);
 
   return (
     <div>
@@ -44,7 +44,7 @@ const Routes = () => {
               <Route path="/create" component={Create} />
               <PrivateRoute
                 path="/party"
-                auth={context.authState}
+                // auth={context.authState}
                 component={Party}
               />
               <Route path="/join" component={Join} />
@@ -52,8 +52,13 @@ const Routes = () => {
           </div>
         </Router>
       </AuthContext.Provider>
+    </div>
+  );
+};
 
-      {/* <Router history={history}>
+export default Routes;
+
+/* <Router history={history}>
         <Header />
         <br />
         <br />
@@ -61,30 +66,24 @@ const Routes = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/hooksform" component={HooksForm} />
-
             <Route path="/hookscontainer" component={HooksContainer1} />
             <Route path="/authcheck" component={AuthCheck} />
             <Route path="/signup" component={SignUp} />
-
             <Route path="/posts" component={Posts} />
             <Route path="/post/:pid" component={ShowPost} />
             <Route path="/editpost/:pid" component={EditPost} />
             <Route path="/addpost" component={AddPost} />
-
             <Route path="/user/:name" component={ShowUser} />
-
             <PrivateRoute
               path="/profile"
               auth={context.authState}
               component={Profile}
             />
-
             <PrivateRoute
               path="/sendmessage"
               auth={context.authState}
               component={SendMessage}
             />
-
             <PrivateRoute
               path="/showmessages/:id"
               auth={context.authState}
@@ -95,7 +94,6 @@ const Routes = () => {
               auth={context.authState}
               component={ReplytoMessage}
             />
-
             <PrivateRoute
               path="/privateroute"
               auth={context.authState}
@@ -115,9 +113,4 @@ const Routes = () => {
             />
           </Switch>
         </div>
-      </Router> */}
-    </div>
-  );
-};
-
-export default Routes;
+      </Router> */
