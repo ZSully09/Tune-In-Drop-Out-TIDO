@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 
-import Header from './header/Header';
-import Song from './playlist/song/Song';
-import Player from '../Player/Player';
-import './Party.scss';
-import Results from './search_bar/Results';
+import Header from "./header/Header";
+import Song from "./playlist/song/Song";
+import Player from "../Player/Player";
+import "./Party.scss";
+import Results from "./search_bar/Results";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default function Party(props) {
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
 
@@ -21,9 +21,7 @@ export default function Party(props) {
     }
     console.log(term);
     // hardcoded for test, eventually comes from db
-    const token =
-      'BQBbwht7UbRfdEoReyEmRyMoKumCCK0GCt2-cJwwTdumTDUbdhCoiHigT-NcFvhqRNX7NPrd061zUxOoQHXFxClUXc9qktDAbdgO2UYFoAJxYirOqSUfqrkc_6IIqKGmuO8fORBRyPaX0JcCpfSLftT_c2VoBLOuRnSDteCcmV4CmrvmwU3QHSs';
-
+    const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
       headers: { Authorization: `Bearer ${token}` }
     })
