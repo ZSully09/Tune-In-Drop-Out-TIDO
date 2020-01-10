@@ -28,13 +28,14 @@ export default function Party(props) {
        
     console.log(term);
     // hardcoded for test, eventually comes from db
-    const token = 'BQAD1R3ZPhMTTvwxtYmL7QedCzSf4KQT3CQdNpNxgdWO1sH9NO88Mnkk19nQoPcMNjc1hIAlQ6s1I9Vig1_yIswsniUXZa2kh767wgGRacAX353zmUQk3Z9Akw1gJIOxFKaMsr16sCaKTbXPnpDBb54RvGD4M8b1alt_K18KwAYuBvma_znoWjI'
-    
-    axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
-    {
-      headers: {Authorization: `Bearer ${token}`}
-    }).then(term => setResults(term.data.tracks.items))
-    .catch(err => console.log(err))
+
+    const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
+
+    axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(term => setResults(term.data.tracks.items))
+      .catch(err => console.log(err));
   }, [term]);
   console.log(results);
   return (
