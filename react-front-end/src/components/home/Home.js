@@ -10,9 +10,9 @@ export default function Home(props) {
   const buttonDiv = classNames('button--div');
 
   // TEST AXIOS CALL
-  useEffect(() => {
-    axios.get('/api/tracks').then(res => setState(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios.get('/api/tracks').then(res => setState(res.data));
+  // }, []);
 
   const [state, setState] = useState('');
 
