@@ -159,19 +159,6 @@ class Player extends Component {
           onLoad={this.handleScriptLoad.bind(this)}
         />
 
-        <CardMedia
-          style={{
-            width: 80,
-            height: 80,
-            margin: 10
-          }}
-          image={
-            this.state.playingInfo.track_window.current_track.album.images[0]
-              .url
-          }
-          title={this.state.playingInfo.track_window.current_track.name}
-        />
-
         <img
           alt=""
           src="https://s3.amazonaws.com/factmag-images/wp-content/uploads/2019/11/Stormzy-Art-big.jpg"
