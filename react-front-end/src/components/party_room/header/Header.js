@@ -8,7 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import CurrentSong from '../../party_room/current_song/CurrentSongPlaying';
-
+import SearchBar from '../search_bar/SearchBar'
 import LiveSearch from '../search_bar/LiveSearch';
 
 
@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SearchAppBar() {
+export default function SearchAppBar(props) {
   const classes = useStyles();
 
   return (
@@ -83,8 +83,13 @@ export default function SearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             TiDo
           </Typography>
+          
           <div className={classes.search}>
-            <div className={classes.searchIcon}>
+            <div className={classes.searchIcon}> 
+              
+              {/* <SearchBar onSearch={props.onSearch} /> */}
+
+
               <SearchIcon />
             </div>
             <InputBase
@@ -94,10 +99,8 @@ export default function SearchAppBar() {
                 input: classes.inputInput
                 
               }}
-              // inputProps={{ 'aria-label': 'seaearch' }}
+              inputProps={{ 'aria-label': 'seaearch' }}
             />
-            {/* <LiveSearch /> */}
-            {/* <CurrentSong /> */}
           </div>
         </Toolbar>
       </AppBar>
