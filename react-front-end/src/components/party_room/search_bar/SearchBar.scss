@@ -1,13 +1,16 @@
 /*** STYLES ***/
 .search {
 	display: inline-block;
-	position: relative;
+	background-color: white;
+	color: black;
+	// position: relative;
+	// left: 0;
 	height: 35px;
 	width: 200px;
 	box-sizing: border-box;
 	margin: 0px 8px 7px 0px;
 	padding: 7px 9px 0px 9px;
-	border: 3px solid black;
+	border: 3px solid white;
 	border-radius: 25px;
 	transition: all 200ms ease;
 	cursor: text;
@@ -25,15 +28,15 @@
 	// 	transition: all 200ms ease;
 	// }
 	
-	&.active,
-	&:hover {
-		width: 200px;
-		margin-right: 0px;
+	// &.active,
+	// &:hover {
+	// 	width: 200px;
+	// 	margin-right: 0px;
 		
-		&:after {
-			height: 0px;	
-		}
-	}
+	// 	&:after {
+	// 		height: 0px;	
+	// 	}
+	// }
 	
 	input {
 		width: 100%;
@@ -42,7 +45,7 @@
 		font-family: Helvetica;
 		font-size: 15px;
 		color: inherit;
-		background: transparent;
+		background: white;
 		outline-width: 0px;
 	}
 }

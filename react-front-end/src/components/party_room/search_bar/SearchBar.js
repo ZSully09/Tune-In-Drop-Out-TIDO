@@ -17,7 +17,7 @@ export default function SearchBar({
       <input
         className="radius"
         spellCheck="false"
-        placeholder=""
+        placeholder="Search for a song"
         name="search"
         type="text"
         value={value}

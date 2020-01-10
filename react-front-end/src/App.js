@@ -4,9 +4,9 @@ import './App.css';
 import ContextState from './context_state_config';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
