@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react'; // { useContext }
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import history from './utils/history';
 
-import Context from './utils/context';
+// import Context from './utils/context';
 // import AuthCheck from './utils/authcheck';
 import PrivateRoute from './components/party_room/PrivateRoute';
 import Home from './components/home/Home';
