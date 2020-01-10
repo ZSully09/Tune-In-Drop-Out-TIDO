@@ -10,7 +10,7 @@ export default function SearchBar({
   const [value, setValue] = useState(term);
   const debouncedTerm = useDebounce(value, 1000);
 
-  useEffect(() => onSearch(debouncedTerm), [debouncedTerm, onSearch]);
+  useEffect(() => onSearch(debouncedTerm), [debouncedTerm]);
 
   return (
     <section className="search">
