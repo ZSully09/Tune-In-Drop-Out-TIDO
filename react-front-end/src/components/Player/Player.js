@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Script from "react-load-script";
-import classNames from "classnames";
-import { MdPause, MdSkipNext } from "react-icons/md";
+import React, { Component } from 'react';
+import Script from 'react-load-script';
+import classNames from 'classnames';
+import { MdPause, MdSkipNext } from 'react-icons/md';
 
-import "../party_room/current_song/CurrentSong.scss";
+import '../party_room/current_song/CurrentSong.scss';
 
 class Player extends Component {
   constructor(props) {
@@ -22,45 +22,45 @@ class Player extends Component {
 
   handleLoadSuccess() {
     this.setState({ scriptLoaded: true });
-    console.log("Script loaded");
+    console.log('Script loaded');
     const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
     const player = new window.Spotify.Player({
-      name: "TiDo",
+      name: 'TiDo',
       getOAuthToken: cb => {
         cb(token);
       }
     });
     this.player = player;
     console.log(player);
-    window.player = player; // TODO: REMOVE ME, FOR THE LOVE OF THINGS THAT MERIT LOVE
+    // window.player = player; // TODO: REMOVE ME, FOR THE LOVE OF THINGS THAT MERIT LOVE
 
     // Error handling
-    player.addListener("initialization_error", ({ message }) => {
+    player.addListener('initialization_error', ({ message }) => {
       console.error(message);
     });
-    player.addListener("authentication_error", ({ message }) => {
+    player.addListener('authentication_error', ({ message }) => {
       console.error(message);
     });
-    player.addListener("account_error", ({ message }) => {
+    player.addListener('account_error', ({ message }) => {
       console.error(message);
     });
-    player.addListener("playback_error", ({ message }) => {
+    player.addListener('playback_error', ({ message }) => {
       console.error(message);
     });
 
     // Playback status updates
-    player.addListener("player_state_changed", state => {
+    player.addListener('player_state_changed', state => {
       console.log(state);
     });
 
     // Ready
-    player.addListener("ready", ({ device_id }) => {
-      console.log("Ready with Device ID", device_id);
+    player.addListener('ready', ({ device_id }) => {
+      console.log('Ready with Device ID', device_id);
     });
 
     // Not Ready
-    player.addListener("not_ready", ({ device_id }) => {
-      console.log("Device ID has gone offline", device_id);
+    player.addListener('not_ready', ({ device_id }) => {
+      console.log('Device ID has gone offline', device_id);
     });
 
     // Connect to the player!
@@ -73,29 +73,37 @@ class Player extends Component {
 
   handleScriptCreate() {
     this.setState({ scriptLoaded: false });
-    console.log("Script created");
+    console.log('Script created');
   }
 
   handleScriptError() {
     this.setState({ scriptError: true });
-    console.log("Script error");
+    console.log('Script error');
   }
 
   handleScriptLoad() {
     this.setState({ scriptLoaded: true });
-    console.log("Script loaded");
+    console.log('Script loaded');
   }
 
   togglePlay() {
     if (this.player) {
       this.player.togglePlay();
     } else {
-      console.log("no such player yet, son");
+      console.log('no such player yet, son');
     }
   }
 
+  toggleNext = () => {
+    if (this.player) {
+      this.player.nextTrack();
+    } else {
+      console.log('no such player yet, mon');
+    }
+  };
+
   render() {
-    const currentSongPlaying = classNames("div", {});
+    const currentSongPlaying = classNames('div', {});
 
     return (
       <div className={currentSongPlaying}>
@@ -116,11 +124,16 @@ class Player extends Component {
         <div id="commands">
           <MdPause
             onClick={() => {
-              console.log("purple people eaters");
+              console.log('purple people eaters');
               this.togglePlay();
             }}
           />
-          <MdSkipNext />
+          <MdSkipNext
+            onClick={() => {
+              console.log('pink people eaters');
+              this.toggleNext();
+            }}
+          />
         </div>
       </div>
     );
