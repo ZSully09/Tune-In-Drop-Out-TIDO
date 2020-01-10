@@ -1,4 +1,5 @@
 .song {
+  position: relative;
   background-color: black;
   color: white;
   display: flex;
@@ -7,7 +8,7 @@
   border-radius: 10px;
   margin: 5px;
   font-family: 'Josefin Sans', sans-serif;
-
+  z-index: 1;
 }
 
 .song__info {
