@@ -14,13 +14,21 @@ export default function Party(props) {
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
 
+  const onSelectSong = (song) => {
+    setTerm('');
+
+    setPlaylist([...playlist, song]);
+  }
+
   useEffect(() => {
     if (!term) {
       setResults([]);
       return;
     }
+       
     console.log(term);
     // hardcoded for test, eventually comes from db
+
     const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
@@ -32,8 +40,8 @@ export default function Party(props) {
   console.log(results);
   return (
     <main>
-      <Header onSearch={setTerm} />
-      <Results results={results} />
+      <Header onSearch={setTerm} term={term} />
+      <Results results={results} onSelectSong={onSelectSong} />
 
       <div className="playlist">
         <Song />
