@@ -22,7 +22,7 @@ export default function Party(props) {
     }
     console.log(term);
     // hardcoded for test, eventually comes from db
-    const token = 'BQBbwht7UbRfdEoReyEmRyMoKumCCK0GCt2-cJwwTdumTDUbdhCoiHigT-NcFvhqRNX7NPrd061zUxOoQHXFxClUXc9qktDAbdgO2UYFoAJxYirOqSUfqrkc_6IIqKGmuO8fORBRyPaX0JcCpfSLftT_c2VoBLOuRnSDteCcmV4CmrvmwU3QHSs'
+    const token = 'BQDd3fKeEIZH8AzHgfLxZrMp4kbMSX-8tbLFu7GHmWq7uwLZiK-YUZ7pmC1aJ1elM-gA49n26ofZcsEgUh-mOI31BnFRTSvve8nObrYv_-_kh5SLvh7YhJILG_5TMv6CLLZIV7cFcq8nYPd90xbkngzdvDuTA1eUGF1Aq53wuNTDrNBcSWUhbzE'
     
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
     {
