@@ -4,11 +4,11 @@ import SpotifyLogin from 'react-spotify-login';
 import classNames from 'classnames';
 import './Login.scss';
 class LoginPage extends Component {
-  onSubmit = () => {
-    // if (userFound) {
-    return <Redirect to="/" />;
-    // }
-  };
+  // onSubmit = () => {
+  //   // if (userFound) {
+  //   return <Redirect to="/" />;
+  //   // }
+  // };
 
   constructor(props) {
     super(props);
@@ -44,7 +44,7 @@ class LoginPage extends Component {
       <div className="login-page">
         <h1>TiDo</h1>
         <section className="login-form">
-          <form className={login}>
+          <form className={login} action="/api/users" method="post">
             <input type="email" className={email} placeholder="Email"></input>
             <input
               type="password"
@@ -54,9 +54,7 @@ class LoginPage extends Component {
             <div className="button-div">
               <div>
                 <Link to="/">
-                  <button className={loginButton} onClick={this.onSubmit}>
-                    Login
-                  </button>
+                  <button className={loginButton}>Login</button>
                 </Link>
               </div>
               <div>
