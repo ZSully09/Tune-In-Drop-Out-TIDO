@@ -4,7 +4,6 @@ CASCADE;
 CREATE TABLE party
 (
   id SERIAL PRIMARY KEY NOT NULL,
-  name varchar(255) NOT NULL,
-  access_code varchar(255) NOT NULL,
+  partyName varchar(255) NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
