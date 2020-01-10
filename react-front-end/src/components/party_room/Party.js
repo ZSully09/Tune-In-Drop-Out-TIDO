@@ -21,8 +21,7 @@ export default function Party(props) {
     }
     console.log(term);
     // hardcoded for test, eventually comes from db
-    const token =
-      'BQBbwht7UbRfdEoReyEmRyMoKumCCK0GCt2-cJwwTdumTDUbdhCoiHigT-NcFvhqRNX7NPrd061zUxOoQHXFxClUXc9qktDAbdgO2UYFoAJxYirOqSUfqrkc_6IIqKGmuO8fORBRyPaX0JcCpfSLftT_c2VoBLOuRnSDteCcmV4CmrvmwU3QHSs';
+    const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
       headers: { Authorization: `Bearer ${token}` }
