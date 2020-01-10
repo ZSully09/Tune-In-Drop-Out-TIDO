@@ -105,25 +105,25 @@ class Player extends Component {
     console.log('Script loaded');
   }
 
-  checkChangePosition = () => {
-    this.player.getCurrentState().then(state => {
-      if (state && this.state.playing) {
-        let { duration, position } = state;
-        // duration = 100%
-        // position = ?%
-        let val = (position * 100) / duration;
-        if (val !== this.state.positionSliderValue) {
-          this.setState({
-            positionSliderValue: val
-          });
-        }
+  // checkChangePosition = () => {
+  //   this.player.getCurrentState().then(state => {
+  //     if (state && this.state.playing) {
+  //       let { duration, position } = state;
+  //       // duration = 100%
+  //       // position = ?%
+  //       let val = (position * 100) / duration;
+  //       if (val !== this.state.positionSliderValue) {
+  //         this.setState({
+  //           positionSliderValue: val
+  //         });
+  //       }
 
-        let positionStamp = this.milisToMinutesAndSeconds(state.position);
-        let durationStamp = this.milisToMinutesAndSeconds(state.duration);
-        this.setState({ positionStamp, durationStamp });
-      }
-    });
-  };
+  //       let positionStamp = this.milisToMinutesAndSeconds(state.position);
+  //       let durationStamp = this.milisToMinutesAndSeconds(state.duration);
+  //       this.setState({ positionStamp, durationStamp });
+  //     }
+  //   });
+  // };
 
   milisToMinutesAndSeconds = mil => {
     let minutes = Math.floor(mil / 60000);
@@ -179,6 +179,7 @@ class Player extends Component {
 
         <div id="song">Wiley Flow</div>
         <div id="artist">Stormzy</div>
+
         <div id="commands">
           <MdPause
             onClick={() => {
