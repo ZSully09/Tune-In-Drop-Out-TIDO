@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
-// import {
-//   Grid,
-//   Typography,
-//   Card,
-//   IconButton,
-//   CardContent,
-//   CardMedia
-// } from '@material-ui/core';
+import {
+  Grid,
+  Typography,
+  Card,
+  IconButton,
+  CardContent,
+  CardMedia
+} from '@material-ui/core';
 import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
 
 import './Player.scss';
@@ -157,6 +157,19 @@ class Player extends Component {
           onCreate={this.handleScriptCreate.bind(this)}
           onError={this.handleScriptError.bind(this)}
           onLoad={this.handleScriptLoad.bind(this)}
+        />
+
+        <CardMedia
+          style={{
+            width: 80,
+            height: 80,
+            margin: 10
+          }}
+          image={
+            this.state.playingInfo.track_window.current_track.album.images[0]
+              .url
+          }
+          title={this.state.playingInfo.track_window.current_track.name}
         />
 
         <img

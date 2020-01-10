@@ -1,8 +1,8 @@
 /*** STYLES ***/
 .search {
 	display: inline-block;
-	background-color: white;
-	color: black;
+	background-color: rgb(38,38,38);
+	color: white;
 	// position: relative;
 	// left: 0;
 	height: 35px;
@@ -10,9 +10,8 @@
 	box-sizing: border-box;
 	margin: 0px 8px 7px 0px;
 	padding: 7px 9px 0px 9px;
-	border: 3px solid white;
 	border-radius: 25px;
-	transition: all 200ms ease;
+	// transition: all 200ms ease;
 	cursor: text;
 	
 	// &:after {
@@ -28,15 +27,16 @@
 	// 	transition: all 200ms ease;
 	// }
 	
-	// &.active,
-	// &:hover {
-	// 	width: 200px;
-	// 	margin-right: 0px;
+	&.active,
+	&:hover {
+		background-color: rgb(64,64,64);
+		width: 200px;
+		margin-right: 0px;
 		
-	// 	&:after {
-	// 		height: 0px;	
-	// 	}
-	// }
+		&:after {
+			height: 0px;	
+		}
+	}
 	
 	input {
 		width: 100%;
@@ -45,7 +45,15 @@
 		font-family: Helvetica;
 		font-size: 15px;
 		color: inherit;
-		background: white;
+		background: rgb(38,38,38);
 		outline-width: 0px;
+		display: flex;
+		align-content: center;
+		margin-top: 5px;
+	}
+
+	
+	input:hover {
+		background: rgb(64,64,64)
 	}
 }

@@ -19,10 +19,10 @@ export default function Party(props) {
       setResults([]);
       return;
     }
-
+    console.log(term);
     // hardcoded for test, eventually comes from db
     const token =
-      'BQAawuwCksE-S5-ML_A3ml6Sh8Hr6AcyUOQ8IyMTqUZOG_1x5ODf0yDI17V5AJihz78dH8V2WYlpT6itVbcd3jWrgWFiPKWHLMKJN84sJklFZA-mwdUBFw0xfrSUEG6dUvOV7yGziUw4X2ccKJ-jubWvSZ6XdnwBGqSbRJUPhkLMpa3PDGR0n3Y';
+      'BQBbwht7UbRfdEoReyEmRyMoKumCCK0GCt2-cJwwTdumTDUbdhCoiHigT-NcFvhqRNX7NPrd061zUxOoQHXFxClUXc9qktDAbdgO2UYFoAJxYirOqSUfqrkc_6IIqKGmuO8fORBRyPaX0JcCpfSLftT_c2VoBLOuRnSDteCcmV4CmrvmwU3QHSs';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
       headers: { Authorization: `Bearer ${token}` }
@@ -30,7 +30,7 @@ export default function Party(props) {
       .then(term => setResults(term.data.tracks.items))
       .catch(err => console.log(err));
   }, [term]);
-
+  console.log(results);
   return (
     <main>
       <Header onSearch={setTerm} />

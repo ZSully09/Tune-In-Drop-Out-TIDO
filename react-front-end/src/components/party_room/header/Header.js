@@ -84,18 +84,9 @@ export default function SearchAppBar(props) {
 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              {/* <SearchBar onSearch={props.onSearch} /> */}
-
               <SearchIcon />
             </div>
-            <InputBase
-              // placeholder="Search...."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-              inputProps={{ 'aria-label': 'seaearch' }}
-            />
+            <SearchBar onSearch={props.onSearch} />
           </div>
         </Toolbar>
       </AppBar>
