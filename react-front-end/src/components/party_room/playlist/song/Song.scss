@@ -3,13 +3,16 @@
   top: 60px;
   background-color: black;
   height: 50px;
-  width: 100%;
+  width: 97%;
   color: white;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: flex-start;
   font-family: 'Josefin Sans', sans-serif;
+  border: 1px solid white;
+  margin: 5px;
+  border-radius: 10px;
 }
 
 .image--song img {
