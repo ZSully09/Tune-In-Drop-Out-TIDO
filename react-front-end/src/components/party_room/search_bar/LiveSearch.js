@@ -15,7 +15,7 @@ export default function LiveSearch(props) {
     }
     
     // hardcoded for test, eventually comes from db
-    const token = 'BQBo6oLkhIBV2O0JX15fsmgkaRQVcCs6bzWg_M8GfLJBuful6AVwDZkK7cl80BjDMfROAd8S4VNvCWSQjjj7OXiIOFtORZiH9E-mDuTSrBJ01PMq1F8e-X1BmxGy8b4VC7NldVui2LsIPHMoVn_pWxQiexSPpr2qCM8fVAIq-0zmh6Y9FPFyBjI'
+    const token = 'BQBbwht7UbRfdEoReyEmRyMoKumCCK0GCt2-cJwwTdumTDUbdhCoiHigT-NcFvhqRNX7NPrd061zUxOoQHXFxClUXc9qktDAbdgO2UYFoAJxYirOqSUfqrkc_6IIqKGmuO8fORBRyPaX0JcCpfSLftT_c2VoBLOuRnSDteCcmV4CmrvmwU3QHSs'
     
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
     {
