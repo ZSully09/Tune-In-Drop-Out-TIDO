@@ -14,14 +14,21 @@ export default function Party(props) {
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
 
+  const onSelectSong = (song) => {
+    setTerm('');
+
+    setPlaylist([...playlist, song]);
+  }
+
   useEffect(() => {
     if (!term) {
       setResults([]);
       return;
     }
+       
     console.log(term);
     // hardcoded for test, eventually comes from db
-    const token = 'BQDd3fKeEIZH8AzHgfLxZrMp4kbMSX-8tbLFu7GHmWq7uwLZiK-YUZ7pmC1aJ1elM-gA49n26ofZcsEgUh-mOI31BnFRTSvve8nObrYv_-_kh5SLvh7YhJILG_5TMv6CLLZIV7cFcq8nYPd90xbkngzdvDuTA1eUGF1Aq53wuNTDrNBcSWUhbzE'
+    const token = 'BQAD1R3ZPhMTTvwxtYmL7QedCzSf4KQT3CQdNpNxgdWO1sH9NO88Mnkk19nQoPcMNjc1hIAlQ6s1I9Vig1_yIswsniUXZa2kh767wgGRacAX353zmUQk3Z9Akw1gJIOxFKaMsr16sCaKTbXPnpDBb54RvGD4M8b1alt_K18KwAYuBvma_znoWjI'
     
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `,
     {
@@ -32,8 +39,8 @@ export default function Party(props) {
   console.log(results);
   return (
     <main>
-      <Header onSearch={setTerm} />
-      <Results results={results} />
+      <Header onSearch={setTerm} term={term} />
+      <Results results={results} onSelectSong={onSelectSong} />
 
       <div className="playlist">
         <Song />

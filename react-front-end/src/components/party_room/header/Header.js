@@ -86,7 +86,7 @@ export default function SearchAppBar(props) {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            <SearchBar onSearch={props.onSearch} />
+            <SearchBar onSearch={props.onSearch} term={props.term} />
           </div>
         </Toolbar>
       </AppBar>
