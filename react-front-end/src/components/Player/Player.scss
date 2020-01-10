@@ -1,4 +1,4 @@
-.div {
+.div--player {
   position: absolute;
   bottom: 0px;
   background-color: black;
@@ -12,24 +12,27 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.div img {
+.div--player img {
   height: 50px;
   width: 50px;
   margin: 10px;
   position: relative;
 }
 
-.div #artist {
+.div--player #artist {
   padding-left: 10px;
-  margin: 10px;
-  font-size: 12px;
+  // margin: 10px;
+  font-size: 16px;
+  opacity: 0.7;
 }
 
-.div #song {
-  margin: 10px;
+.div--player #song {
+  // margin: 10px;
+  font-size: 20px;
 }
 
-.div #commands {
+.div--player #commands {
+  font-size: 30px;
   margin-right: 10px;
   position: absolute;
   right: 0;

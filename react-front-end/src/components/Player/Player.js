@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
-import { MdPause, MdSkipNext } from 'react-icons/md';
+import {
+  Grid,
+  Typography,
+  Card,
+  IconButton,
+  CardContent,
+  CardMedia
+} from '@material-ui/core';
+import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
 
-import '../party_room/current_song/CurrentSong.scss';
+import './Player.scss';
 
 class Player extends Component {
   constructor(props) {
@@ -11,7 +19,18 @@ class Player extends Component {
     this.handleLoadSuccess = this.handleLoadSuccess.bind(this);
     this.handleLoadFailure = this.handleLoadSuccess.bind(this);
     this.cb = this.cb.bind(this);
+    this.playerCheckInterval = null;
+    this.positionCheckInterval = null;
     this.player = null;
+
+    this.state = {
+      deviceId: null,
+      playingInfo: null,
+      playing: false,
+      positionSliderValue: 50,
+      positionStamp: '00:00',
+      durationStamp: '00:00'
+    };
   }
 
   componentDidMount() {
@@ -86,6 +105,32 @@ class Player extends Component {
     console.log('Script loaded');
   }
 
+  // checkChangePosition = () => {
+  //   this.player.getCurrentState().then(state => {
+  //     if (state && this.state.playing) {
+  //       let { duration, position } = state;
+  //       // duration = 100%
+  //       // position = ?%
+  //       let val = (position * 100) / duration;
+  //       if (val !== this.state.positionSliderValue) {
+  //         this.setState({
+  //           positionSliderValue: val
+  //         });
+  //       }
+
+  //       let positionStamp = this.milisToMinutesAndSeconds(state.position);
+  //       let durationStamp = this.milisToMinutesAndSeconds(state.duration);
+  //       this.setState({ positionStamp, durationStamp });
+  //     }
+  //   });
+  // };
+
+  milisToMinutesAndSeconds = mil => {
+    let minutes = Math.floor(mil / 60000);
+    let seconds = ((mil % 60000) / 1000).toFixed(0);
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+  };
+
   togglePlay() {
     if (this.player) {
       this.player.togglePlay();
@@ -103,10 +148,10 @@ class Player extends Component {
   };
 
   render() {
-    const currentSongPlaying = classNames('div', {});
+    const player = classNames('div--player');
 
     return (
-      <div className={currentSongPlaying}>
+      <div className={player}>
         <Script
           url="https://sdk.scdn.co/spotify-player.js"
           onCreate={this.handleScriptCreate.bind(this)}
@@ -114,13 +159,40 @@ class Player extends Component {
           onLoad={this.handleScriptLoad.bind(this)}
         />
 
+        <CardMedia
+          style={{
+            width: 80,
+            height: 80,
+            margin: 10
+          }}
+          image={
+            this.state.playingInfo.track_window.current_track.album.images[0]
+              .url
+          }
+          title={this.state.playingInfo.track_window.current_track.name}
+        />
+
         <img
           alt=""
           src="https://s3.amazonaws.com/factmag-images/wp-content/uploads/2019/11/Stormzy-Art-big.jpg"
         ></img>
 
+        {/* <CardMedia
+          style={{
+            width: 80,
+            height: 80,
+            margin: 10
+          }}
+          image={
+            this.state.playingInfo.track_window.current_track.album.images[0]
+              .url
+          }
+          title={this.state.playingInfo.track_window.current_track.name}
+        /> */}
+
         <div id="song">Wiley Flow</div>
         <div id="artist">Stormzy</div>
+
         <div id="commands">
           <MdPause
             onClick={() => {
