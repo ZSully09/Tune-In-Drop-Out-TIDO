@@ -19,7 +19,7 @@ export default function DropDownSong(props) {
     console.log(song);
 
     // TODO: call some callback that came in from props
-
+    props.onSelectSong(song);
   }
 
   return (
