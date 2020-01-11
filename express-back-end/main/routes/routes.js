@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var client = require("./db");
-const bcrypt = require("bcrypt");
+// var client = require("./db");
 
 // USERS
 
