@@ -14,7 +14,7 @@ export default function Create(props) {
       <form className={createPartyForm}>
         <input className={partyName} placeholder={makePartyName()}></input>
         <Link to="/party">
-          <button className={createNewPartyButton}> New Party </button>
+          <button className={partyName}> New Party </button>
         </Link>
       </form>
     </main>
