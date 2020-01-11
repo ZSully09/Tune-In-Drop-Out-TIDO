@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 
 import Header from './header/Header';
 import Song from './playlist/song/Song';
@@ -14,28 +14,34 @@ export default function Party(props) {
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
 
-  const onSelectSong = (song) => {
+  const onSelectSong = song => {
     setTerm('');
-    console.log("song added ", song);
+    console.log('song added ', song);
     setPlaylist([...playlist, song]);
-  }
-  
+  };
+
   let songs = playlist.map(song => {
-    console.log('props',props)
-    return (<Song name={song.songName} artist={song.songArtist} image={song.songThumbnail}></Song>)
-  })
-  console.log("current song list", songs)
+    console.log('props', props);
+    return (
+      <Song
+        name={song.songName}
+        artist={song.songArtist}
+        image={song.songThumbnail}
+      ></Song>
+    );
+  });
+  console.log('current song list', songs);
   useEffect(() => {
     if (!term) {
       setResults([]);
       return;
     }
-    
+
     console.log(term);
     // hardcoded for test, eventually comes from db
-    
+
     const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
-    
+
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -48,10 +54,7 @@ export default function Party(props) {
       <Header onSearch={setTerm} term={term} />
       <Results results={results} onSelectSong={onSelectSong} />
 
-      <div className="playlist">
-        {/* <Song /> */}
-        {songs}
-      </div>
+      <div className="playlist">{songs}</div>
 
       <footer>
         <Player />

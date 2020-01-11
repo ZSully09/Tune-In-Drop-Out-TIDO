@@ -30,17 +30,19 @@
   font-size: 12px;
 }
 
-.div--vote--song {
-  right: 50px;
-  position: absolute;
-  align-items: center;
-  align-content: center;
-  // FIX THIS *****************
-  top: 15px;
-}
+// .div--vote--song {
+//   right: 50px;
+//   position: absolute;
+//   align-items: center;
+//   align-content: center;
+//   // FIX THIS *****************
+//   top: 15px;
+// }
 
 .button--up--vote {
   border-style: none;
+  position: absolute;
+  right: 10px;
 }
 
 .button--edit {
