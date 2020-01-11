@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Link } from "react-router-dom";
-import randomWords from "random-words";
+import randomWords from "words";
 
 import classNames from "classnames";
 import "./Create.scss";
