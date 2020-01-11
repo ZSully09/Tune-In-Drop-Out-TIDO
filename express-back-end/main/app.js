@@ -27,8 +27,8 @@ io.on("connection", socket => {
     socket.broadcast.emit("outgoing data", { num: data });
   });
 
-  //TODO Socket on {user} vote for {songName}
-  socket.on("");
+  // //TODO Socket on {user} vote for {songName}
+  // socket.on("");
 
   //A special namespace "disconnect" for when a client disconnects
   socket.on("disconnect", () => console.log("Client disconnected"));
@@ -43,5 +43,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+
+// The in-memory database of tweets. It's a basic object with an array in it.
+const db = require("../lib/in-memory-db");
+
+// The `data-helpers` module provides an interface to the database of songs.
+// This simple interface layer has a big benefit: we could switch out the
+// actual database it uses and see little to no changes elsewhere in the code
+//
+// Because it exports a function that expects the `db` as a parameter, we can
+// require it and pass the `db` parameter immediately:
+const DataHelpers = require("../lib/data-helpers")(db);
+
+// The `songs-routes` module works similarly: we pass it the `DataHelpers` object
+// so it can define routes that use it to interact with the data layer.
+const songRoutes = require("./routes/songs")(DataHelpers);
+
+// Mount the songs routes at the "/party" path prefix:
+app.use("/songs", songRoutes);
 
 module.exports = app;
