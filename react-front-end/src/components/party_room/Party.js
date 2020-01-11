@@ -16,21 +16,26 @@ export default function Party(props) {
 
   const onSelectSong = (song) => {
     setTerm('');
-
+    console.log("song added ", song);
     setPlaylist([...playlist, song]);
   }
-
+  
+  let songs = playlist.map(song => {
+    console.log('props',props)
+    return (<Song name={song.songName} artist={song.songArtist} image={song.songThumbnail}></Song>)
+  })
+  console.log("current song list", songs)
   useEffect(() => {
     if (!term) {
       setResults([]);
       return;
     }
-       
+    
     console.log(term);
     // hardcoded for test, eventually comes from db
-
+    
     const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
-
+    
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=5 `, {
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -44,7 +49,8 @@ export default function Party(props) {
       <Results results={results} onSelectSong={onSelectSong} />
 
       <div className="playlist">
-        <Song />
+        {/* <Song /> */}
+        {songs}
       </div>
 
       <footer>

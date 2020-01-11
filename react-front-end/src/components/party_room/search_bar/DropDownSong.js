@@ -10,6 +10,7 @@ export default function DropDownSong(props) {
 
   const setSong = () => {
     const song = {
+      songId: props.uri,
       songName: props.name,
       songArtist: props.artists[0].name,
       songAlbum: props.album.name,
