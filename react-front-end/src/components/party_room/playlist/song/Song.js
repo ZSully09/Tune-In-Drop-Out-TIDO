@@ -19,25 +19,24 @@ export default function Song(props) {
   useEffect(() => {
     axios.get('/api/track').then(res => setState(res.data));
   }, []);
-
+  console.log(props.image);
   const [state, setState] = useState('');
   return (
     <div className={songDiv}>
       <div className={songThumbnail}>
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Joyner_Debut_Album.jpg/220px-Joyner_Debut_Album.jpg"></img>
+        <img src={props.image}></img>
       </div>
-      <div className={songName}>Ultra Sound</div>
-      <div className={songArtist}>Joyner Lucas</div>
-      <div className={voteSong}>
-        <button className={upVote}>
-          # &nbsp;&nbsp;
-          <IoMdThumbsUp />
-        </button>
-      </div>
+      <div className={songName}> {props.name}</div>
+      <div className={songArtist}> {props.artist}</div>
+      {/* <div className={voteSong}> */}
+      <button className={upVote}>
+        &nbsp;&nbsp;
+        <IoMdThumbsUp />
+      </button>
+      {/* </div> */}
       <button className={editButton}>
         <FaEllipsisV />
       </button>
-      <p>{state}</p>
     </div>
   );
 }

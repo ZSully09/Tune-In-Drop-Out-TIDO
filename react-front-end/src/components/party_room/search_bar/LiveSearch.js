@@ -13,6 +13,8 @@ export default function LiveSearch(props) {
       setResults([]);
       return
     }
+
+    
     
     // hardcoded for test, eventually comes from db
     const token = 'BQBbwht7UbRfdEoReyEmRyMoKumCCK0GCt2-cJwwTdumTDUbdhCoiHigT-NcFvhqRNX7NPrd061zUxOoQHXFxClUXc9qktDAbdgO2UYFoAJxYirOqSUfqrkc_6IIqKGmuO8fORBRyPaX0JcCpfSLftT_c2VoBLOuRnSDteCcmV4CmrvmwU3QHSs'
