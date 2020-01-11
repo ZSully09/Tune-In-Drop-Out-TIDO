@@ -13,17 +13,20 @@ export default function Party(props) {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
+  const [player, setPlayer] = useState([]);
 
   const onSelectSong = song => {
     setTerm("");
     console.log("song added ", song);
     setPlaylist([...playlist, song]);
+    setPlayer([...player, songs[0]]);
   };
 
   let songs = playlist.map(song => {
     console.log("props", props);
     return (
       <Song
+        key={song.uri}
         name={song.songName}
         artist={song.songArtist}
         image={song.songThumbnail}
@@ -57,7 +60,11 @@ export default function Party(props) {
       <div className="playlist">{songs}</div>
 
       <footer>
-        <Player />
+        <Player
+          currSong={{ some: 'snit' }}
+          setCurrSong={() => {}}
+          nextSong={playlist[0]}
+        />
       </footer>
     </main>
   );

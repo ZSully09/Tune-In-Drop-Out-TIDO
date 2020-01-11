@@ -139,6 +139,22 @@ class Player extends Component {
     }
   }
 
+  playSong = song => {
+    // 1 pull some data out of the song, I guess?
+    let { songId } = song;
+    // 2 tell spotify that this iswhat we want I guess?
+    this.player.startSong(songId); // NB I totally made up that method, it proably isn't real, like your mother's love
+  };
+
+  playNext = () => {
+    if (this.player && this.props.nextSong) {
+      this.playSong(this.props.nextSong);
+    } else {
+      // TODO: what should we do if there's no next song?  like if we're at the end of the PL?
+      console.log('sad trombone');
+    }
+  };
+
   toggleNext = () => {
     if (this.player) {
       this.player.nextTrack();
