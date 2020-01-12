@@ -18,10 +18,10 @@ const io = socketIo(server);
 // const io = socketIo(server).listen(server);
 
 // Heroku
-app.use(express.static(path.join(__dirname, './../react-front-end/public/')));
+app.use(express.static(path.join(__dirname, '../../react-front-end/public/')));
 app.get('/*', (req, res) => {
   res.sendFile(
-    path.join(__dirname, 'public', './../react-front-end/public/index.html')
+    path.join(__dirname, 'public', '../../react-front-end/public/index.html')
   );
 });
 
