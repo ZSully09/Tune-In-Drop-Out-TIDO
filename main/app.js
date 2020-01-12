@@ -17,6 +17,12 @@ const server = http.createServer(app);
 const io = socketIo(server);
 // const io = socketIo(server).listen(server);
 
+// Heroku
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 //Setting up a socket with the namespace "connection" for new sockets
 io.on('connection', socket => {
   console.log('New client connected');
@@ -41,12 +47,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Heroku
-app.use(express.static(path.join(__dirname, 'build')));
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.use('/', indexRouter);
 
