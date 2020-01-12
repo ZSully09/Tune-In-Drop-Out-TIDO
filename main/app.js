@@ -18,12 +18,10 @@ const io = socketIo(server);
 // const io = socketIo(server).listen(server);
 
 // Heroku
-app.use(express.static(path.join(__dirname, '/../../react-front-end/build/')));
+app.use(express.static(path.join(__dirname, '/../react-front-end/build/')));
 
 app.get('*', (req, res) => {
-  res.sendFile(
-    path.join(__dirname + '/../../react-front-end/build/index.html')
-  );
+  res.sendFile(path.join(__dirname + '/../react-front-end/build/index.html'));
 });
 
 //Setting up a socket with the namespace "connection" for new sockets
