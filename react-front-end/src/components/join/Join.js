@@ -16,6 +16,7 @@ export default function Join(props) {
           <button className={createNewPartyButton}> New Party </button>
         </Link>
       </form>
+      Hello World
     </main>
   );
 }
