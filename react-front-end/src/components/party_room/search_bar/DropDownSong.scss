@@ -1,25 +1,47 @@
+// * {
+//   border:1px solid red;
+// }
+
 .song {
   position: relative;
   background-color: black;
   color: white;
   display: flex;
-  align-content: space-between;
+  align-content: center;
   border: 1px solid white;
   border-radius: 10px;
   margin: 5px;
   font-family: 'Josefin Sans', sans-serif;
-  z-index: 1;
+  height: 15vh;
+  z-index: 0;
 }
 
 .song__info {
+  width: 100%;
   padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .song__name {
   padding-bottom: 5px;
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .song__thumbnail {
   border-radius: 10px;
+}
+
+.song__album {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

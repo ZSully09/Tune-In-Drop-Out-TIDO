@@ -14,6 +14,7 @@ export default function Song(props) {
   const voteSong = classNames('div--vote--song');
   const upVote = classNames('button--up--vote');
   const editButton = classNames('button--edit');
+  const songInfo = classNames('div--song--info');
 
   // TEST AXIOS CALL
   useEffect(() => {
@@ -26,8 +27,10 @@ export default function Song(props) {
       <div className={songThumbnail}>
         <img src={props.image}></img>
       </div>
+      <div className={songInfo}>
       <div className={songName}> {props.name}</div>
       <div className={songArtist}> {props.artist}</div>
+      </div>
       {/* <div className={voteSong}> */}
       <button className={upVote}>
         &nbsp;&nbsp;

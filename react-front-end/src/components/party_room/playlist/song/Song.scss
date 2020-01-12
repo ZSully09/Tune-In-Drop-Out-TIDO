@@ -1,6 +1,12 @@
+* {
+  // position: relative;
+  // z-index: 1
+  // border: 1px solid red;
+}
+
 .div--song {
-  // position: absolute;
-  top: 60px;
+  position: relative;
+  top: 10px;
   background-color: black;
   height: 50px;
   width: 97%;
@@ -12,6 +18,7 @@
   font-family: 'Josefin Sans', sans-serif;
   border-bottom: 0.1px solid grey;
   margin: 5px;
+  // z-index: 1;
 }
 
 .image--song img {
@@ -23,10 +30,15 @@
 
 .div--song--name {
   margin: 10px;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .div--song--artist {
-  margin: 10px;
+  margin: 2px;
+  margin-bottom: 15px;
   font-size: 12px;
 }
 
@@ -42,12 +54,18 @@
 .button--up--vote {
   border-style: none;
   position: absolute;
-  right: 10px;
+  right: 30px;
 }
 
 .button--edit {
-  margin-right: 20px;
+  margin-right: 10px;
   position: absolute;
   right: 0;
   border-style: none;
+}
+
+.div--song--info {
+  display: flex;
+  flex-direction: column;
+  // height: 150px;
 }

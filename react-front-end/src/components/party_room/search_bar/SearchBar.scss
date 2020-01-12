@@ -6,11 +6,11 @@
 	// position: relative;
 	// left: 0;
 	height: 35px;
-	width: 200px;
+	width: 300px;
 	box-sizing: border-box;
 	margin: 0px 8px 7px 0px;
 	padding: 7px 9px 0px 9px;
-	border-radius: 25px;
+	// border-radius: 25px;
 	// transition: all 200ms ease;
 	cursor: text;
 	
@@ -30,7 +30,7 @@
 	&.active,
 	&:hover {
 		background-color: rgb(64,64,64);
-		width: 200px;
+		width: 300px;
 		margin-right: 0px;
 		
 		&:after {
@@ -39,9 +39,9 @@
 	}
 	
 	input {
-		width: 100%;
+		// width: 100%;
 		border: none;
-		box-sizing: border-box;
+		// box-sizing: border-box;
 		font-family: Helvetica;
 		font-size: 15px;
 		color: inherit;
@@ -50,6 +50,7 @@
 		display: flex;
 		align-content: center;
 		margin-top: 5px;
+		padding: 1px;
 	}
 
 	
