@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import Context from './utils/context';
-import * as ACTIONS from './store/actions/actions';
+// import * as ACTIONS from './store/actions/actions';
 
 import * as Reducer1 from './store/reducers/plain_reducer';
 import * as AuthReducer from './store/reducers/auth_reducer';

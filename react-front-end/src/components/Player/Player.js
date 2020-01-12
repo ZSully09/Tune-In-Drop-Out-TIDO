@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
-import {
-  Grid,
-  Typography,
-  Card,
-  IconButton,
-  CardContent,
-  CardMedia
-} from '@material-ui/core';
+// import {
+//   Grid,
+//   Typography,
+//   Card,
+//   IconButton,
+//   CardContent,
+//   CardMedia
+// } from '@material-ui/core';
 import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
 
 import './Player.scss';
@@ -30,6 +30,7 @@ class Player extends Component {
       positionSliderValue: 50,
       positionStamp: '00:00',
       durationStamp: '00:00'
+      // nextSong: playlist[0]
     };
   }
 
