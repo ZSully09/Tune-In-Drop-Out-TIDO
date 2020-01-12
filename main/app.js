@@ -18,12 +18,7 @@ const io = socketIo(server);
 // const io = socketIo(server).listen(server);
 
 // Heroku
-app.use(express.static(path.join(__dirname, '../../react-front-end/build/')));
-app.get('/*', (req, res) => {
-  res.sendFile(
-    path.join(__dirname, 'build', '../../react-front-end/build/index.html')
-  );
-});
+app.use(express.static(path.join(__dirname, '/../../react-front-end/build/')));
 
 //Setting up a socket with the namespace "connection" for new sockets
 io.on('connection', socket => {
@@ -69,5 +64,11 @@ const songRoutes = require('./routes/songs')(DataHelpers);
 
 // Mount the songs routes at the "/party" path prefix:
 app.use('/songs', songRoutes);
+
+app.get('*', (req, res) => {
+  res.sendFile(
+    path.join(__dirname + '/../../react-front-end/build/index.html')
+  );
+});
 
 module.exports = app;
