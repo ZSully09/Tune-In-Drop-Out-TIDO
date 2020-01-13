@@ -48,4 +48,4 @@ export default function makePartyName() {
   return choiceWords.join('-');
 }
 
-console.log(makePartyName());
+// console.log(makePartyName()); s

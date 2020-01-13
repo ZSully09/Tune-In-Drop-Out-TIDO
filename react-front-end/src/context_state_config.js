@@ -1,11 +1,12 @@
-import React, { useReducer } from 'react';
+import React from // { useReducer }
+'react';
 import Context from './utils/context';
 // import * as ACTIONS from './store/actions/actions';
 
-import * as Reducer1 from './store/reducers/plain_reducer';
-import * as AuthReducer from './store/reducers/auth_reducer';
-import * as FormReducer from './store/reducers/form_reducer';
-import * as PostsReducer from './store/reducers/posts_reducer';
+// import * as Reducer1 from './store/reducers/plain_reducer';
+// import * as AuthReducer from './store/reducers/auth_reducer';
+// import * as FormReducer from './store/reducers/form_reducer';
+// import * as PostsReducer from './store/reducers/posts_reducer';
 
 import Routes from './routes';
 
@@ -17,10 +18,10 @@ const ContextState = props => {
   /*
         Plain Reducer
     */
-  const [stateReducer1, dispatchReducer1] = useReducer(
-    Reducer1.Reducer1,
-    Reducer1.initialState
-  );
+  // const [stateReducer1, dispatchReducer1] = useReducer(
+  //   Reducer1.Reducer1,
+  //   Reducer1.initialState
+  // );
 
   // const handleDispatchTrue = () => {
   //   //    dispatchReducer1(type: "SUCCESS")
@@ -37,10 +38,10 @@ const ContextState = props => {
   /*
       Auth Reducer
     */
-  const [stateAuthReducer, dispatchAuthReducer] = useReducer(
-    AuthReducer.AuthReducer,
-    AuthReducer.initialState
-  );
+  // const [stateAuthReducer, dispatchAuthReducer] = useReducer(
+  //   AuthReducer.AuthReducer,
+  //   AuthReducer.initialState
+  // );
 
   // const handleLogin = () => {
   //   dispatchAuthReducer(ACTIONS.login_success());
@@ -70,10 +71,10 @@ const ContextState = props => {
       Form Reducer
     */
 
-  const [stateFormReducer, dispatchFormReducer] = useReducer(
-    FormReducer.FormReducer,
-    FormReducer.initialState
-  );
+  // const [stateFormReducer, dispatchFormReducer] = useReducer(
+  //   FormReducer.FormReducer,
+  //   FormReducer.initialState
+  // );
 
   // const handleFormChange = event => {
   //   dispatchFormReducer(ACTIONS.user_input_change(event.target.value));
@@ -91,10 +92,10 @@ const ContextState = props => {
       Posts Reducer
     */
 
-  const [statePostsReducer, dispatchPostsReducer] = useReducer(
-    PostsReducer.PostsReducer,
-    PostsReducer.initialState
-  );
+  // const [statePostsReducer, dispatchPostsReducer] = useReducer(
+  //   PostsReducer.PostsReducer,
+  //   PostsReducer.initialState
+  // );
 
   // const handleSetPosts = posts => {
   //   dispatchPostsReducer(ACTIONS.set_db_posts(posts));
