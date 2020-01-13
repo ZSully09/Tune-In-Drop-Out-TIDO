@@ -1,10 +1,5 @@
-// * {
-//   border:1px solid red;
-// }
-
 div.results {
   z-index: 100;
-  // position: fixed;
 }
 
 .song {
@@ -13,18 +8,18 @@ div.results {
   color: white;
   display: flex;
   align-content: center;
-  border: 1px solid white;
-  border-radius: 10px;
-  margin: 5px;
+  border-bottom: 0.1px solid rgb(52, 48, 48);
+  // border-radius: 10px;
+  // margin: 5px;
   font-family: 'Josefin Sans', sans-serif;
-  height: 15vh;
-  z-index: 0;
+  height: 11.7vh;
+  z-index: 1001;
+  text-align: left;
 }
 
 .song__info {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
   display: flex;
   align-content: flex-start;
   flex-direction: column;
@@ -34,21 +29,35 @@ div.results {
 }
 
 .song__name {
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .song__thumbnail {
-  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+  margin-top: 14.065px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.song__artist {
+  padding-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.7;
 }
 
 .song__album {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  opacity: 0.7;
 }
 
 

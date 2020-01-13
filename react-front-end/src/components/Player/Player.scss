@@ -19,16 +19,22 @@
   position: relative;
 }
 
-.div--player #artist {
-  padding-left: 10px;
-  // margin: 10px;
-  font-size: 16px;
-  opacity: 0.7;
+.div--player #song {
+  font-size: 18px;
+  // width: 200px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.div--player #song {
-  // margin: 10px;
-  font-size: 20px;
+.div--player #artist {
+  margin-left: 5px;
+  margin-top: 2px;
+  text-align: left;
+  font-size: 16px;
+  opacity: 0.7;
+  padding-left: 0px;
 }
 
 .div--player #commands {
