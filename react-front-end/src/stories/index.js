@@ -1,10 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import CurrentSongPlaying from '../components/party_room/current_song/CurrentSongPlaying';
-import CurrentSongPaused from '../components/party_room/current_song/CurrentSongPaused';
-import CurrentSongNone from '../components/party_room/current_song/CurrentSongNone';
 import Home from '../components/home/Home';
 import Login from '../components/login/Login';
 import Register from '../components/registration/Registration';
@@ -14,11 +11,6 @@ import Header from '../components/party_room/header/Header';
 import SearchBar from '../components/party_room/search_bar/SearchBar';
 import Song from '../components/party_room/playlist/song/Song';
 import Playlist from '../components/party_room/playlist/Playlist';
-
-storiesOf('CurrentSong', module)
-  .add('Playing', () => <CurrentSongPlaying></CurrentSongPlaying>)
-  .add('Paused', () => <CurrentSongPaused></CurrentSongPaused>)
-  .add('None', () => <CurrentSongNone></CurrentSongNone>);
 
 storiesOf('SeachBar', module).add('search', () => <SearchBar></SearchBar>);
 
