@@ -8,7 +8,6 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import SearchBar from '../search_bar/SearchBar';
-import LiveSearch from '../search_bar/LiveSearch';
 
 const useStyles = makeStyles(theme => ({
   root: {
