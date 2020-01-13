@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from // useState
+// useEffect
+'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import classNames from 'classnames';
 import './Home.scss';
 
@@ -14,7 +16,7 @@ export default function Home(props) {
   //   axios.get('/api/tracks').then(res => setState(res.data));
   // }, []);
 
-  const [state, setState] = useState('');
+  // const [state, setState] = useState('');
 
   return (
     <main>
@@ -31,7 +33,6 @@ export default function Home(props) {
           </Link>
         </div>
       </div>
-      <p>{state}</p>
     </main>
   );
 }
