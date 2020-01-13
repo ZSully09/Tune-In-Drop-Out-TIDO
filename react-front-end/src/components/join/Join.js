@@ -13,10 +13,9 @@ export default function Join(props) {
       <form className={createPartyForm}>
         <input className={partyName} placeholder="Party Name"></input>
         <Link to="/party">
-          <button className={createNewPartyButton}> New Party </button>
+          <button className={createNewPartyButton}> Join Party </button>
         </Link>
       </form>
-      Hello World x2
     </main>
   );
 }

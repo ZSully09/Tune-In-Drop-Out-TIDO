@@ -27,9 +27,11 @@ export default function Create(props) {
     <main>
       <h3> Create a New Party </h3>
       <form className={createPartyForm}>
-        <input className={partyName} type="text">
-          {props.partyName}
-        </input>
+        <input
+          className={partyName}
+          type="text"
+          value={makePartyName()}
+        ></input>
         <Link to="/party">
           <button className={createNewPartyButton}> New Party </button>
         </Link>
