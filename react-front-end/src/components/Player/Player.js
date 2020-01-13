@@ -9,7 +9,11 @@ import classNames from 'classnames';
 //   CardContent,
 //   CardMedia
 // } from '@material-ui/core';
-import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
+import {
+  // MdPlayArrow,
+  MdPause,
+  MdSkipNext
+} from 'react-icons/md';
 
 import './Player.scss';
 
