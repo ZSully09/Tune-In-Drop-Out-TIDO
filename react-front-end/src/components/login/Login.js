@@ -3,11 +3,18 @@ import { Redirect, Link } from "react-router-dom";
 import SpotifyLogin from "react-spotify-login";
 import classNames from "classnames";
 import "./Login.scss";
-class LoginPage extends Component {
+
+class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { redirectToUserPage: false };
   }
+
+  // componentDidMount() {                  #TODO Test Again before Delete
+  //   fetch("http://localhost:4001/")
+  //     .then(response => response.json())
+  //     .then(console.log("yello"));
+  // }
 
   render() {
     const onSuccess = response => {
