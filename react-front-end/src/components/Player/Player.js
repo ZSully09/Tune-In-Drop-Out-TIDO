@@ -193,9 +193,10 @@ class Player extends Component {
           }
           title={this.state.playingInfo.track_window.current_track.name}
         /> */}
-        <div id="song">Wiley Flow</div>
-        <div id="artist">Stormzy</div>
-
+        <div>
+          <div id="song">Wiley Flow</div>
+          <div id="artist">Stormzy</div>
+        </div>
         <div id="commands">
           <MdPause
             onClick={() => {
