@@ -19,11 +19,11 @@ class App extends Component {
     const socket = socketIOClient(endpoint);
     //Listen for data on the "outgoing data" namespace and supply a callback for what to do when we get one. In this case, we set a state variable
     socket.on('outgoing data', data => this.setState({ response: data.num }));
-    console.log('outgoing data');
+    // console.log('outgoing data');
   }
 
   render() {
-    const { response } = this.state;
+    // const { response } = this.state;
     return (
       <div>
         <ContextState />
