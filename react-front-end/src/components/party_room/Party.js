@@ -44,7 +44,7 @@ export default function Party(props) {
     // hardcoded for test, eventually comes from db
 
     const token =
-      'BQALFqy2D0nViWnZxcbBJoBT7m82t3SSNl4eknmBoVf_d6wwkf3INv-lyJ-9i4gLFTJn4Md7cyTsVVZX36zqCcHRmyokoCJMQt-MeejmbYH9s4psdO6ldo6X_yTG3QHhhGUbwEJPCyaSpyPfST8-oOMNj4f-7-wKe2_os6f9jWLMmeoAoBpwZL8';
+      'BQDV4zDkaX2VtsibyzWZCkfuY72Dq61P3FEbhTwFXun5Ug05V_nbxqTUC0SA6IWMre_vrjplJvVvxYH0WUvn7NidD6WKWPq3ktR2PH6W5WhtgZHQsFOQuOYe7v0iT20_Ey9kixGNc1M18--scamIMsNpjtUFxbQHSsZCshpRZfU7p-0_nN5jDvUblBxP';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=7 `, {
       headers: { Authorization: `Bearer ${token}` }
