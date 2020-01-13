@@ -1,19 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import makePartyName from '../../helpers/names';
-import accessToken from '../login/Login';
-import './Create.scss';
+import React from "react";
+import { Redirect, Link } from "react-router-dom";
+import classNames from "classnames";
+import makePartyName from "../../helpers/names";
+import SpotifyLogin from "react-spotify-login";
+// import accessToken from "../login/Login";
+import "./Create.scss";
 // import { AuthContext } from '../../OLD -- context/auth';
 
-console.log(accessToken);
+// console.log(accessToken);
 
 class Create extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      createPartyForm: '',
-      name: makePartyName()
+      createPartyForm: "",
+      name: makePartyName(),
+      redirectToUserPage: false,
+      accessToken: ""
     };
   }
 
@@ -22,24 +25,24 @@ class Create extends React.Component {
   };
 
   onSubmitcreatePartyForm = () => {
-    let user_id = 'zsullivan93';
-    console.log('before');
+    let user_id = "zsullivan93";
+    console.log("before");
     fetch(`https://api.spotify.com/v1/users/${user_id}/playlists`, {
       headers: {
-        Authorization: `Bearer BQAF3ptp625E5dF0JCwsX3OjkQL18dxRVJqxyJfsbIRIeLhtIhkothD1zLQuG25YvH52Ct6JhNPblzT2ZtjkpVX2UivC1yUnnvXk_tjfcSoDOdiaqKgLC828ue-BfQ3eCaI1ZxpzWE0IfBK2u5YoU1f0LStK8v5Ka5GL2IgxXu7qou_hnqgkEgOt-znP3_ez6aOt3g4iTS3QfL1PDkEG6Mo-oPPFwYT4ufLN6f0SAy3jvSDUJvAAEqpRzoARpWI`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${this.state.accessToken}`,
+        "Content-Type": "application/json"
       },
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
         name: this.state.name,
         public: true
       })
     })
       .then(res => {
-        console.log('create party', res);
+        console.log("create party", res);
       })
       .catch(error => {
-        console.log('create failed', error);
+        console.log("create failed", error);
       });
     // console.log('name', this.state.name);
     // console.log(this.state);
@@ -47,9 +50,38 @@ class Create extends React.Component {
   };
 
   render() {
-    const createPartyForm = classNames('formn--party');
-    const partyName = classNames('input--party--name');
-    const createNewPartyButton = classNames('button--create--new');
+    const createPartyForm = classNames("formn--party");
+    const partyName = classNames("input--party--name");
+    const createNewPartyButton = classNames("button--create--new");
+
+    const onSuccess = response => {
+      let accessToken = response.access_token;
+      console.log(accessToken);
+      this.setState({
+        redirectToUserPage: true,
+        accessToken: response.access_token
+      });
+    };
+    console.log(this.state.accessToken);
+    const onFailure = response => console.error(response);
+    const buttonText = (
+      <div>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+          alt="login-logo"
+        />
+        &nbsp;&nbsp;<span>Login with Spotify</span>
+      </div>
+    );
+    if (this.state.redirectToUserPage === true) {
+      return <Redirect to="/" />;
+    }
+
+    // const login = classNames("form--login");
+    // const email = classNames("input--email");
+    // const password = classNames("input--password");
+    // const loginButton = classNames("button--login");
+    const spotifyLoginButton = classNames("button--spotify--login");
 
     // const setParty = () => {
     //   const party = {
@@ -82,6 +114,20 @@ class Create extends React.Component {
               New Party
             </button>
           </Link>
+          <div>
+            <Link to="/">
+              <SpotifyLogin
+                type="button"
+                className={spotifyLoginButton}
+                buttonText={buttonText}
+                clientId={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
+                redirectUri={process.env.REACT_APP_SPOTIFY_REDIRECT_URI}
+                scope={process.env.REACT_APP_SPOTIFY_SCOPE}
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+              />
+            </Link>
+          </div>
         </form>
       </main>
     );

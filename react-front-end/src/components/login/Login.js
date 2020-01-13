@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import SpotifyLogin from 'react-spotify-login';
-import classNames from 'classnames';
-import './Login.scss';
+import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
+import SpotifyLogin from "react-spotify-login";
+import classNames from "classnames";
+import "./Login.scss";
 
 class LoginPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { redirectToUserPage: false, accessToken: '' };
+    // this.state = { redirectToUserPage: false, accessToken: "" };
   }
 
   // componentDidMount() {                  #TODO Test Again before Delete
@@ -17,34 +17,34 @@ class LoginPage extends Component {
   // }
 
   render() {
-    const onSuccess = response => {
-      let accessToken = response.access_token;
-      console.log(accessToken);
-      this.setState({
-        redirectToUserPage: true,
-        accessToken: response.access_token
-      });
-    };
-    console.log(this.state.accessToken);
-    const onFailure = response => console.error(response);
-    const buttonText = (
-      <div>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
-          alt="login-logo"
-        />
-        &nbsp;&nbsp;<span>Login with Spotify</span>
-      </div>
-    );
-    if (this.state.redirectToUserPage === true) {
-      return <Redirect to="/" />;
-    }
+    // const onSuccess = response => {
+    //   let accessToken = response.access_token;
+    //   console.log(accessToken);
+    //   this.setState({
+    //     redirectToUserPage: true,
+    //     accessToken: response.access_token
+    //   });
+    // };
+    // console.log(this.state.accessToken);
+    // const onFailure = response => console.error(response);
+    // const buttonText = (
+    //   <div>
+    //     <img
+    //       src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+    //       alt="login-logo"
+    //     />
+    //     &nbsp;&nbsp;<span>Login with Spotify</span>
+    //   </div>
+    // );
+    // if (this.state.redirectToUserPage === true) {
+    //   return <Redirect to="/" />;
+    // }
 
-    const login = classNames('form--login');
-    const email = classNames('input--email');
-    const password = classNames('input--password');
-    const loginButton = classNames('button--login');
-    const spotifyLoginButton = classNames('button--spotify--login');
+    const login = classNames("form--login");
+    const email = classNames("input--email");
+    const password = classNames("input--password");
+    const loginButton = classNames("button--login");
+    const spotifyLoginButton = classNames("button--spotify--login");
 
     return (
       <div className="login-page">
@@ -63,7 +63,7 @@ class LoginPage extends Component {
                   <button className={loginButton}>Login</button>
                 </Link>
               </div>
-              <div>
+              {/* <div>
                 <Link to="/">
                   <SpotifyLogin
                     type="button"
@@ -76,7 +76,7 @@ class LoginPage extends Component {
                     onFailure={onFailure}
                   />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </form>
         </section>
