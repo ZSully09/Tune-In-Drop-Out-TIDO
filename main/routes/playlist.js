@@ -8,27 +8,18 @@ const app = express();
 app.use(bodyparser.json());
 
 const database = {
-  users: [
+  playlists: [
     {
-      id: 111,
-      name: "Chris",
-      email: "chris.drysdale12@gmail.com",
-      password: "password"
-      // joined: new Time()
+      id: "Awesome-Slender-Velociraptor",
+      tracks: "imAmMusic"
     },
     {
-      id: 222,
-      name: "Nick",
-      email: "nhoszko@gmail.com",
-      password: "password"
-      // joined: new Time()
+      id: "Belated-Southern-Skyscraper",
+      tracks: "imAmMusic"
     },
     {
-      id: 333,
-      name: "Zach",
-      email: "zscullivan93@gmail.com",
-      password: "password"
-      // joined: new Time()
+      id: "Moist-Fetus-Velociraptor",
+      tracks: "imAmMusic"
     }
   ]
 };
@@ -72,3 +63,5 @@ app.post("/playlist", (req, res) => {
   });
   res.json(database.users[database.users.length - 1]);
 });
+
+module.exports = router;
