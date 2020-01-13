@@ -181,9 +181,22 @@ class Player extends Component {
           src="https://s3.amazonaws.com/factmag-images/wp-content/uploads/2019/11/Stormzy-Art-big.jpg"
         ></img>
 
-        <div id="song">Wiley Flow</div>
-        <div id="artist">Stormzy</div>
-
+        {/* <CardMedia
+          style={{
+            width: 80,
+            height: 80,
+            margin: 10
+          }}
+          image={
+            this.state.playingInfo.track_window.current_track.album.images[0]
+              .url
+          }
+          title={this.state.playingInfo.track_window.current_track.name}
+        /> */}
+        <div>
+          <div id="song">Wiley Flow</div>
+          <div id="artist">Stormzy</div>
+        </div>
         <div id="commands">
           <MdPause
             onClick={() => {
