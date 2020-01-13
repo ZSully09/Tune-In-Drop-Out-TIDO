@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "go": "nodemon server.js"
+    "go": "nodemon server.js",
+    "heroku-postbuild": "cd react-front-end && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
     "bcrypt": "^3.0.4",

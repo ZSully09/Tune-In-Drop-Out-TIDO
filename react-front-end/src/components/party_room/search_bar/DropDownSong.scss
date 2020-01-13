@@ -2,6 +2,11 @@
 //   border:1px solid red;
 // }
 
+div.results {
+  z-index: 100;
+  // position: fixed;
+}
+
 .song {
   position: relative;
   background-color: black;
@@ -45,6 +50,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 
 .song__artist {
   white-space: nowrap;

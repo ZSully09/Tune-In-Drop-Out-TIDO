@@ -1,60 +1,41 @@
 /*** STYLES ***/
 .search {
-	display: inline-block;
-	background-color: rgb(38,38,38);
-	color: white;
-	// position: relative;
-	// left: 0;
-	height: 35px;
-	width: 300px;
-	box-sizing: border-box;
-	margin: 0px 8px 7px 0px;
-	padding: 7px 9px 0px 9px;
-	// border-radius: 25px;
-	// transition: all 200ms ease;
-	cursor: text;
-	
-	// &:after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	width: 3px;
-	// 	height: 20px;
-	// 	right: -5px;
-	// 	top: 21px;
-	// 	background: black;
-	// 	border-radius: 3px;
-	// 	// transform: rotate(-45deg);
-	// 	transition: all 200ms ease;
-	// }
-	
-	&.active,
-	&:hover {
-		background-color: rgb(64,64,64);
-		width: 300px;
-		margin-right: 0px;
-		
-		&:after {
-			height: 0px;	
-		}
-	}
-	
-	input {
-		// width: 100%;
-		border: none;
-		// box-sizing: border-box;
-		font-family: Helvetica;
-		font-size: 15px;
-		color: inherit;
-		background: rgb(38,38,38);
-		outline-width: 0px;
-		display: flex;
-		align-content: center;
-		margin-top: 5px;
-		padding: 1px;
-	}
+  display: inline-block;
+  background-color: rgb(52, 48, 48);
+  color: white;
+  height: 35px;
+  width: 300px;
+  box-sizing: border-box;
+  cursor: text;
 
-	
-	input:hover {
-		background: rgb(64,64,64)
-	}
+  &.active,
+  &:hover {
+    background-color: rgb(52, 48, 48);
+    width: 300px;
+    margin-right: 0px;
+
+    &:after {
+      height: 0px;
+    }
+  }
+
+  input {
+    border: none;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    background: rgb(52, 48, 48);
+    width: 250px;
+    height: 33px;
+    padding-left: 35px;
+  }
+
+  input:hover {
+    background: rgb(52, 48, 48);
+  }
+}
+
+div.makeStyles-search-4 {
+  background-color: rgb(52, 48, 48);
+  height: 35px;
 }
