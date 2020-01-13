@@ -23,7 +23,7 @@ export default function Party(props) {
   };
 
   let songs = playlist.map(song => {
-    console.log('props', props);
+    // console.log('props', props);
     return (
       <Song
         id={song.uri}
@@ -33,18 +33,18 @@ export default function Party(props) {
       ></Song>
     );
   });
-  console.log('current song list', songs);
+  // console.log('current song list', songs);
   useEffect(() => {
     if (!term) {
       setResults([]);
       return;
     }
 
-    console.log(term);
+    // console.log(term);
     // hardcoded for test, eventually comes from db
 
     const token =
-      'BQALFqy2D0nViWnZxcbBJoBT7m82t3SSNl4eknmBoVf_d6wwkf3INv-lyJ-9i4gLFTJn4Md7cyTsVVZX36zqCcHRmyokoCJMQt-MeejmbYH9s4psdO6ldo6X_yTG3QHhhGUbwEJPCyaSpyPfST8-oOMNj4f-7-wKe2_os6f9jWLMmeoAoBpwZL8';
+      'BQB3qtltDivkpCDSLBOty8z4rFLTeOYQNFvewAgUraCUfO1drtxtiWgSPUuBViNjP_M1-hY_nIOnXjqJbUATZpKxq4XPKxr16WZoOzFC5mIl1gAzpgxGcAhtmeQavFLbb0S_0w0OjTh0hJRb1DfR52rrC6q_SJXTVIM99HiwmjTl7BgfYeEOo6scCjy_';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=7 `, {
       headers: { Authorization: `Bearer ${token}` }
@@ -52,7 +52,7 @@ export default function Party(props) {
       .then(term => setResults(term.data.tracks.items))
       .catch(err => console.log(err));
   }, [term]);
-  console.log(results);
+  // console.log(results);
   return (
     <main>
       <Header onSearch={setTerm} term={term} />

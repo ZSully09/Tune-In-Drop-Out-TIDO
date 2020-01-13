@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 import './DropDownSong.scss';
 import { useToasts } from 'react-toast-notifications';
 
@@ -27,7 +27,11 @@ export default function DropDownSong(props) {
   return (
     <div className="results">
       <div className="song" onClick={setSong}>
-        <img className="song__thumbnail" src={props.album.images[2].url} />
+        <img
+          className="song__thumbnail"
+          alt=""
+          src={props.album.images[2].url}
+        />
         <div className="song__info">
           <div className="song__name">{props.name}</div>
           <div className="song__artist">{props.artists[0].name}</div>
