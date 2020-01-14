@@ -16,11 +16,6 @@ export default function Song(props) {
   const editButton = classNames('button--edit');
   const songInfo = classNames('div--song--info');
 
-  // TEST AXIOS CALL
-  // useEffect(() => {
-  //   axios.get('/api/track').then(res => setState(res.data));
-  // }, []);
-  // console.log(props.image);
   const [state, setState] = useState('');
   return (
     <div className={songDiv}>
