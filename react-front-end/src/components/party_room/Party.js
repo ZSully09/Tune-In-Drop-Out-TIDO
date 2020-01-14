@@ -41,7 +41,6 @@ export default function Party(props) {
     }
 
     // console.log(term);
-    // hardcoded for test, eventually comes from db
 
     const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
 
@@ -57,10 +56,38 @@ export default function Party(props) {
   }, [term]);
   // console.log(results);
 
-  //new function for setting playlist
-  const updatePlayist = next_tracks => {
-    //store in playlist state
+  let getSongsFromSpotifyPlaylist = () => {
+    // let playlist_id = `${process.env.REACT_APP_SPOTIFY_PLAYLIST_ID}`;
+    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
+    // console.log('before adding song');
+    axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, {
+      headers: {
+        // OAuth Token
+        Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
+        // Authorization: `Bearer BQC_YBs2eeh3Y0KLlXVv2IHcbfP4DOFj-0gMoBkKpb0gHey7Nm88DmHBj4b9DgtJp4SR7O8-0Z7dFDbUwcPJqIamqDXWpYi360kjJ6mRvLW6wi9E3mvPtDEa3aWDT0n7ae85HnBsn4DU457Izy900Sj-dFAV4TUeECBiycD2cXlUKPxI_0fU4dkUd9N8h3VbIeOvpMOzbM_77InkH2TwDS66pzzhcDYGWpCLOzPGxrEhdOZQJJ-LC3kriEC9YnI`,
+        'Content-Type': 'application/json'
+      },
+      method: 'GET'
+    })
+      .then(res => {
+        const songs = res.data.items.map(item => {
+          return {
+            uri: item.track.uri,
+            songName: item.track.name,
+            songArtist: item.track.artists[0].name,
+            songThumbnail: item.track.album.images[2].url
+          };
+        });
+        setPlaylist(songs);
+        console.log('songs received from spotify', res);
+      })
+      .catch(error => {
+        console.log('songs failed to be received from spotify', error);
+      });
   };
+
+  getSongsFromSpotifyPlaylist();
+
   return (
     <main>
       <Header onSearch={setTerm} term={term} />
