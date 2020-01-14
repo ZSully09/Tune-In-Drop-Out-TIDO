@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './SearchBar.scss';
-import useDebounce from "../../../hooks/useDebounce";
+import useDebounce from '../../../hooks/useDebounce';
 
-export default function SearchBar({
-  term,
-  onSearch
-}) {
-
+export default function SearchBar({ term, onSearch }) {
   const [value, setValue] = useState(term);
   const debouncedTerm = useDebounce(value, 1000);
 
   useEffect(() => onSearch(debouncedTerm), [debouncedTerm]);
   useEffect(() => {
     setValue(term);
-    console.log('term effect', term)
-  }, [term]
-    
-    );
-  
+    console.log('term effect', term);
+  }, [term]);
 
   return (
     <section className="search">

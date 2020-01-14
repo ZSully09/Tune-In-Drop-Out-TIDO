@@ -17,7 +17,7 @@ export default function Party(props) {
 
   const onSelectSong = song => {
     setTerm('');
-    console.log('song added ', song);
+    // console.log('song added ', song);
     setPlaylist([...playlist, song]);
     setPlayer([...player, songs[0]]);
   };
@@ -44,7 +44,7 @@ export default function Party(props) {
     // hardcoded for test, eventually comes from db
 
     const token =
-      'BQB3qtltDivkpCDSLBOty8z4rFLTeOYQNFvewAgUraCUfO1drtxtiWgSPUuBViNjP_M1-hY_nIOnXjqJbUATZpKxq4XPKxr16WZoOzFC5mIl1gAzpgxGcAhtmeQavFLbb0S_0w0OjTh0hJRb1DfR52rrC6q_SJXTVIM99HiwmjTl7BgfYeEOo6scCjy_';
+      'BQB13MS4M68lIgXNTkDSUxx0suclrEcbOjjsVx5PipopEhKqhl2lNNZLh6Q14RZB3y4LagO44eubl2Y6A958ou9jkfbmxJcWCaLrZmwbBKSRVO6cne6bQSVIqDmFjHyVGI6JYjApk2iS3BCFFUCPlhBIV8CKqdwu0CAC_qWY70nvt-Ny-F6cO6_rjUs3';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=7 `, {
       headers: { Authorization: `Bearer ${token}` }
