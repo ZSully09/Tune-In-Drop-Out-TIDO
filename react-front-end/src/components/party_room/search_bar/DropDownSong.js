@@ -26,6 +26,7 @@ export default function DropDownSong(props) {
 
   let addSongToSpotifyPlaylist = () => {
     let user_id = 'zsullivan93';
+    // let playlist_id = `${process.env.REACT_APP_SPOTIFY_PLAYLIST_ID}`;
     let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
     console.log('before adding song');
     fetch(
