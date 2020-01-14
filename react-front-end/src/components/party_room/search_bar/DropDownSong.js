@@ -26,13 +26,13 @@ export default function DropDownSong(props) {
 
   let addSongToSpotifyPlaylist = () => {
     let user_id = 'zsullivan93';
-    let playlist_id = '2MW9g98a7uVTvgOw8b93ks';
+    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
     console.log('before adding song');
     fetch(
       `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
       {
         headers: {
-          Authorization: `Bearer BQBhC-GYW1xEzUyVSO-MEqUuMkUSPjgq9ZN2q-zDZsfZ19-nBNnO26wSBxsQMxNRqUUQTlKgv4zkaiKF-FVuW6elS9BYfO79NJs9-0uBwgJ0uRYHzdl1KiTNh59UOx0FDugxjwXxEEUwlAqJLFTCI3fJLArqhjsgvSMQIY2UphWAg2VKwjuC4CogRFPwok-dOkw7Kq_9xqCA1HIGvb2r4Ff6DsYl_S2Fl3MIj12P2cMGTrfKgqKWMpgmIPPP08w`,
+          Authorization: `Bearer BQAMQNG4k8q2H2TNw74LxhWXme1hdearY9ySnVqDmLYppoKiqqFX_g4Ky_p29CQJoN7aSSUE6kJQMfIypjdGoimzFLpX8Ylm8qmreiXLyUz_eeqiBIRcrUyB9ZDE9i6uqvy9mTKWI-iVPgVa8xJ2C6VdwJf1hurSxDdlF-vfEc0JQPUjag52RBkG4fLYzFA-kTzoQMXZKkKsn1QfpewVE8rx5_x-uS32yXxzbqRodRTp4KeXxQIx0hkMrO5G0lg`,
           'Content-Type': 'application/json'
         },
         method: 'POST',
@@ -50,8 +50,14 @@ export default function DropDownSong(props) {
   };
 
   return (
-    <div className="results" onClick={addSongToSpotifyPlaylist}>
-      <div className="song" onClick={setSong}>
+    <div className="results">
+      <div
+        className="song"
+        onClick={() => {
+          setSong();
+          addSongToSpotifyPlaylist();
+        }}
+      >
         <img
           className="song__thumbnail"
           alt=""
