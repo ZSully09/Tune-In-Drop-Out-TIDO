@@ -43,8 +43,11 @@ export default function Party(props) {
     // console.log(term);
     // hardcoded for test, eventually comes from db
 
-    const token =
-      "BQB7r0gynN5aTyZOtyTnyl0hKeJ3QKxU2tXAiqqzmIGnONTC3QnnzFDrRPNPidVudOtiiTIpur-t56FQ6GYFjOOarza3FOvi-7Pb8ugg_xA7SKzomKREXIK43953BzevEZ7Fs7pGVZxZsQXbnOL08jV9Lw_NXT1o3gZteHaueLbwMhJnSB6p7TBr8QY";
+    const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
+
+    // SDK Token
+    // const token =
+    //   'BQC9LCCfTdoIJ0cCYkyZa3KpFEOlgMpWuMMvGVT6VoI84J26ADuePPtzv8S8ZmNUgkK6irc8EbDwvWJmv6zAP_8_js-8ih3pL3bfK9Ynwes0gpXi1FxuJIZxKENSMJo7qzPWoX4_AKiLb4eMfPxNhIzc_UuYl_rrWbqZKeGZXgMf2p4EvozYk3CFHO4F';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=7 `, {
       headers: { Authorization: `Bearer ${token}` }

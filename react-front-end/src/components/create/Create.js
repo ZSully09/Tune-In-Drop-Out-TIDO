@@ -29,7 +29,9 @@ class Create extends React.Component {
     console.log("before");
     fetch(`https://api.spotify.com/v1/users/${user_id}/playlists`, {
       headers: {
-        Authorization: `Bearer BQA1T6hFSpMmfQWIN3y6p4wenRsakp8KddatMu3TwlKOs_9VYxaCTRnJwmdk3CzzOIFxYdm55BCa9Jomwjz2dsHCUIrwcFCxgmjrnPRbib1U71CXOkDh9uZuWoyseSwonpMKtB_9ebmaKKqawh5IuMrW0_fcTr9AhoVHtYRLVIvGasthc_PwVslG8g8TdVX0VuOx6OhCjuM0avh1D0EXBoQr_N5hgQ`,
+        // OAuth Token
+        Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
+        // Authorization: `Bearer BQC_YBs2eeh3Y0KLlXVv2IHcbfP4DOFj-0gMoBkKpb0gHey7Nm88DmHBj4b9DgtJp4SR7O8-0Z7dFDbUwcPJqIamqDXWpYi360kjJ6mRvLW6wi9E3mvPtDEa3aWDT0n7ae85HnBsn4DU457Izy900Sj-dFAV4TUeECBiycD2cXlUKPxI_0fU4dkUd9N8h3VbIeOvpMOzbM_77InkH2TwDS66pzzhcDYGWpCLOzPGxrEhdOZQJJ-LC3kriEC9YnI`,
         "Content-Type": "application/json"
       },
       method: "POST",
