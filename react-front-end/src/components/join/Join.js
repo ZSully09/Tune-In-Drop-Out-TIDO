@@ -48,7 +48,7 @@ class Join extends React.Component {
         <form className={createPartyForm}>
           <input className={partyName} placeholder="Party Name"></input>
 
-          <Link to="/${playlist_id}">
+          <Link to="party/${playlist_id}">
             {/* <Link to="/${partyName}"> */}
 
             <button className={createNewPartyButton}> Join Party </button>

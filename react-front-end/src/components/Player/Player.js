@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
 import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
+// import getSongsFromSpotifyPlaylist from '../party_room/Party';
 import './Player.scss';
 // const Player = ({
 //     current_track,
@@ -47,19 +48,19 @@ const Player = () => {
       });
 
       player.addListener('player_state_changed', state => {
-        console.log('currentTrack', state.track_window.current_track);
+        // console.log('currentTrack', state.track_window.current_track);
         setCurrentTrack(state.track_window.current_track);
-        console.log(
-          'current track artists',
-          state.track_window.current_track.artists[0].name
-        );
-        console.log(currentTrack);
+        // console.log(
+        //   'current track artists',
+        //   state.track_window.current_track.artists[0].name
+        // );
+        // console.log(currentTrack);
       });
 
       player.connect();
 
       setPlayer(player);
-      setIsPaused(false);
+      // setIsPaused(false);
     };
   }, []);
 
@@ -80,7 +81,7 @@ const Player = () => {
       console.log('no such player yet, mon');
     }
   };
-  console.log('test current track', currentTrack);
+  // console.log('test current track', currentTrack);
   return (
     <div className={playerDiv}>
       <Script url="https://sdk.scdn.co/spotify-player.js" />

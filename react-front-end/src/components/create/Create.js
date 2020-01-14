@@ -76,7 +76,7 @@ class Create extends React.Component {
       </div>
     );
     if (this.state.redirectToUserPage === true) {
-      return <Link to="/create" />;
+      return <Link to="/" />;
     }
 
     // const login = classNames("form--login");
@@ -99,6 +99,8 @@ class Create extends React.Component {
     //   props.onSelectSong(song);
     // };
 
+    console.log("nnnnn", this.state.name);
+
     return (
       <main>
         <h3> Create a New Party </h3>
@@ -108,7 +110,7 @@ class Create extends React.Component {
             type="text"
             defaultValue={this.state.name}
           ></input>
-          <Link to="/party">
+          <Link to={`/party/${this.state.name}`}>
             <button
               onClick={this.onSubmitcreatePartyForm}
               className={createNewPartyButton}
