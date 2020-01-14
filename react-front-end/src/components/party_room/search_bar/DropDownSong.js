@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 // import classnames from 'classnames';
-import './DropDownSong.scss';
-import { useToasts } from 'react-toast-notifications';
+import "./DropDownSong.scss";
+import { useToasts } from "react-toast-notifications";
 
 export default function DropDownSong(props) {
   const { addToast } = useToasts();
@@ -15,7 +15,7 @@ export default function DropDownSong(props) {
       songThumbnail: props.album.images[2].url
     };
     addToast(`${song.songName} was added to the playlist`, {
-      appearance: 'success',
+      appearance: "success",
       autoDismiss: true
     });
     console.log(song);
@@ -25,27 +25,27 @@ export default function DropDownSong(props) {
   };
 
   let addSongToSpotifyPlaylist = () => {
-    let user_id = 'zsullivan93';
-    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
-    console.log('before adding song');
+    let user_id = "1159700382";
+    let playlist_id = "3a7bXfozKZeDrmjTKnSjS9";
+    console.log("before adding song");
     fetch(
       `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
       {
         headers: {
-          Authorization: `Bearer BQAMQNG4k8q2H2TNw74LxhWXme1hdearY9ySnVqDmLYppoKiqqFX_g4Ky_p29CQJoN7aSSUE6kJQMfIypjdGoimzFLpX8Ylm8qmreiXLyUz_eeqiBIRcrUyB9ZDE9i6uqvy9mTKWI-iVPgVa8xJ2C6VdwJf1hurSxDdlF-vfEc0JQPUjag52RBkG4fLYzFA-kTzoQMXZKkKsn1QfpewVE8rx5_x-uS32yXxzbqRodRTp4KeXxQIx0hkMrO5G0lg`,
-          'Content-Type': 'application/json'
+          Authorization: `Bearer BQA1T6hFSpMmfQWIN3y6p4wenRsakp8KddatMu3TwlKOs_9VYxaCTRnJwmdk3CzzOIFxYdm55BCa9Jomwjz2dsHCUIrwcFCxgmjrnPRbib1U71CXOkDh9uZuWoyseSwonpMKtB_9ebmaKKqawh5IuMrW0_fcTr9AhoVHtYRLVIvGasthc_PwVslG8g8TdVX0VuOx6OhCjuM0avh1D0EXBoQr_N5hgQ`,
+          "Content-Type": "application/json"
         },
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           uris: [`${props.uri}`]
         })
       }
     )
       .then(res => {
-        console.log('added song to playlist', res);
+        console.log("added song to playlist", res);
       })
       .catch(error => {
-        console.log('song failed to add', error);
+        console.log("song failed to add", error);
       });
   };
 
