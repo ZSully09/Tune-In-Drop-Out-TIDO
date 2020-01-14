@@ -44,7 +44,7 @@ export default function Party(props) {
     // hardcoded for test, eventually comes from db
 
     const token =
-      'BQB13MS4M68lIgXNTkDSUxx0suclrEcbOjjsVx5PipopEhKqhl2lNNZLh6Q14RZB3y4LagO44eubl2Y6A958ou9jkfbmxJcWCaLrZmwbBKSRVO6cne6bQSVIqDmFjHyVGI6JYjApk2iS3BCFFUCPlhBIV8CKqdwu0CAC_qWY70nvt-Ny-F6cO6_rjUs3';
+      'BQCcGSnT12wXtf8p-EyE4aIVw0lYEUtR9U4oH5AaQd-APQeE0jZQrCgkosD7UMlEX-lOPePJIUCSP9hwJP7zfuShLkQFt4XxGotJWPgr2tYoQxVpWnC7L8B3eUYqSZfL45ppizzlz-fns9ts4CV5eTzJ-7pJlkhvQ06yUNVpiguipoGValuIwZqq6aIo';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=7 `, {
       headers: { Authorization: `Bearer ${token}` }
@@ -53,6 +53,11 @@ export default function Party(props) {
       .catch(err => console.log(err));
   }, [term]);
   // console.log(results);
+
+  //new function for setting playlist
+  const updatePlayist = next_tracks => {
+    //store in playlist state
+  };
   return (
     <main>
       <Header onSearch={setTerm} term={term} />
@@ -62,9 +67,10 @@ export default function Party(props) {
 
       <footer>
         <Player
-          currSong={{ some: 'snit' }}
-          setCurrSong={() => {}}
-          nextSong={playlist[0]}
+        // updatePlaylist={updatePlayist}
+        // currSong={{ some: 'snit' }}
+        // setCurrSong={() => {}}
+        // nextSong={playlist[0]}
         />
       </footer>
     </main>

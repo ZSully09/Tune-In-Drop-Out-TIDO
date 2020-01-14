@@ -1,10 +1,10 @@
-import React from "react";
-import { Redirect, Link } from "react-router-dom";
-import classNames from "classnames";
-import makePartyName from "../../helpers/names";
-import SpotifyLogin from "react-spotify-login";
+import React from 'react';
+import { Redirect, Link } from 'react-router-dom';
+import classNames from 'classnames';
+import makePartyName from '../../helpers/names';
+import SpotifyLogin from 'react-spotify-login';
 // import accessToken from "../login/Login";
-import "./Create.scss";
+import './Create.scss';
 // import { AuthContext } from '../../OLD -- context/auth';
 
 // console.log(accessToken);
@@ -13,10 +13,10 @@ class Create extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      createPartyForm: "",
+      createPartyForm: '',
       name: makePartyName(),
       redirectToUserPage: false,
-      accessToken: ""
+      accessToken: ''
     };
   }
 
@@ -25,40 +25,34 @@ class Create extends React.Component {
   // };
 
   onSubmitcreatePartyForm = () => {
-    let user_id = "zsullivan93";
-    console.log("before");
+    let user_id = 'zsullivan93';
+    console.log('before');
     fetch(`https://api.spotify.com/v1/users/${user_id}/playlists`, {
       headers: {
-        Authorization: `Bearer ${this.state.accessToken}`,
-        "Content-Type": "application/json"
+        Authorization: `Bearer BQAMQNG4k8q2H2TNw74LxhWXme1hdearY9ySnVqDmLYppoKiqqFX_g4Ky_p29CQJoN7aSSUE6kJQMfIypjdGoimzFLpX8Ylm8qmreiXLyUz_eeqiBIRcrUyB9ZDE9i6uqvy9mTKWI-iVPgVa8xJ2C6VdwJf1hurSxDdlF-vfEc0JQPUjag52RBkG4fLYzFA-kTzoQMXZKkKsn1QfpewVE8rx5_x-uS32yXxzbqRodRTp4KeXxQIx0hkMrO5G0lg`,
+        'Content-Type': 'application/json'
       },
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         name: this.state.name,
         public: true
       })
-    }).then(checkStatus);
-    function checkStatus(res) {
-      if (res.status >= 200 || res.status < 300) {
-        return res;
-        console.log("create party", res);
-      } else {
-        let err = new Error(res.statusText);
-        err.response = res;
-        throw err;
-        // .catch(error => {
-        //   console.log("create failed", error);
-      }
-      // console.log('name', this.state.name);
-      // console.log(this.state);
-      // this.props.onRouteChange('/party');
-    }
+    })
+      .then(res => {
+        console.log('create party', res);
+      })
+      .catch(error => {
+        console.log('create failed', error);
+      });
+    // console.log('name', this.state.name);
+    // console.log(this.state);
+    // this.props.onRouteChange('/party');
   };
 
   render() {
-    const createPartyForm = classNames("formn--party");
-    const partyName = classNames("input--party--name");
-    const createNewPartyButton = classNames("button--create--new");
+    const createPartyForm = classNames('formn--party');
+    const partyName = classNames('input--party--name');
+    const createNewPartyButton = classNames('button--create--new');
 
     const onSuccess = response => {
       let accessToken = response.access_token;
@@ -80,14 +74,14 @@ class Create extends React.Component {
       </div>
     );
     if (this.state.redirectToUserPage === true) {
-      return <Redirect to="/" />;
+      return <Link to="/" />;
     }
 
     // const login = classNames("form--login");
     // const email = classNames("input--email");
     // const password = classNames("input--password");
     // const loginButton = classNames("button--login");
-    const spotifyLoginButton = classNames("button--spotify--login");
+    const spotifyLoginButton = classNames('button--spotify--login');
 
     // const setParty = () => {
     //   const party = {
