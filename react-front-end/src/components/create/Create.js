@@ -37,16 +37,22 @@ class Create extends React.Component {
         name: this.state.name,
         public: true
       })
-    })
-      .then(res => {
+    }).then(checkStatus);
+    function checkStatus(res) {
+      if (res.status >= 200 || res.status < 300) {
+        return res;
         console.log("create party", res);
-      })
-      .catch(error => {
-        console.log("create failed", error);
-      });
-    // console.log('name', this.state.name);
-    // console.log(this.state);
-    // this.props.onRouteChange('/party');
+      } else {
+        let err = new Error(res.statusText);
+        err.response = res;
+        throw err;
+        // .catch(error => {
+        //   console.log("create failed", error);
+      }
+      // console.log('name', this.state.name);
+      // console.log(this.state);
+      // this.props.onRouteChange('/party');
+    }
   };
 
   render() {
