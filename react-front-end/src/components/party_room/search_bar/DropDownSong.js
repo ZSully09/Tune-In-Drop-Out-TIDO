@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 // import classnames from 'classnames';
-import './DropDownSong.scss';
-import { useToasts } from 'react-toast-notifications';
+import "./DropDownSong.scss";
+import { useToasts } from "react-toast-notifications";
 
 export default function DropDownSong(props) {
   const { addToast } = useToasts();
@@ -15,7 +15,7 @@ export default function DropDownSong(props) {
       songThumbnail: props.album.images[2].url
     };
     addToast(`${song.songName} was added to the playlist`, {
-      appearance: 'success',
+      appearance: "success",
       autoDismiss: true
     });
     console.log(song);
@@ -25,10 +25,9 @@ export default function DropDownSong(props) {
   };
 
   let addSongToSpotifyPlaylist = () => {
-    let user_id = 'zsullivan93';
-    // let playlist_id = `${process.env.REACT_APP_SPOTIFY_PLAYLIST_ID}`;
-    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
-    console.log('before adding song');
+    let user_id = "1159700382";
+    let playlist_id = "3a7bXfozKZeDrmjTKnSjS9";
+    console.log("before adding song");
     fetch(
       `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
       {
@@ -36,19 +35,19 @@ export default function DropDownSong(props) {
           // OAuth Token
           Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
           // Authorization: `Bearer BQC_YBs2eeh3Y0KLlXVv2IHcbfP4DOFj-0gMoBkKpb0gHey7Nm88DmHBj4b9DgtJp4SR7O8-0Z7dFDbUwcPJqIamqDXWpYi360kjJ6mRvLW6wi9E3mvPtDEa3aWDT0n7ae85HnBsn4DU457Izy900Sj-dFAV4TUeECBiycD2cXlUKPxI_0fU4dkUd9N8h3VbIeOvpMOzbM_77InkH2TwDS66pzzhcDYGWpCLOzPGxrEhdOZQJJ-LC3kriEC9YnI`,
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json"
         },
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           uris: [`${props.uri}`]
         })
       }
     )
       .then(res => {
-        console.log('added song to playlist', res);
+        console.log("added song to playlist", res);
       })
       .catch(error => {
-        console.log('song failed to add', error);
+        console.log("song failed to add", error);
       });
   };
 

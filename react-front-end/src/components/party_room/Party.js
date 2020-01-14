@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // import classNames from 'classnames';
 
-import Header from './header/Header';
-import Song from './playlist/song/Song';
-import Player from '../Player/Player';
-import './Party.scss';
-import Results from './search_bar/Results';
+import Header from "./header/Header";
+import Song from "./playlist/song/Song";
+import Player from "../Player/Player";
+import "./Party.scss";
+import Results from "./search_bar/Results";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default function Party(props) {
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
   const [player, setPlayer] = useState([]);
 
   const onSelectSong = song => {
-    setTerm('');
+    setTerm("");
     // console.log('song added ', song);
     setPlaylist([...playlist, song]);
     setPlayer([...player, songs[0]]);
