@@ -20,9 +20,9 @@ class Create extends React.Component {
     };
   }
 
-  onPartyChange = event => {
-    this.setState({ createPartyForm: event.target.value });
-  };
+  // onPartyChange = event => {
+  //   this.setState({ createPartyForm: event.target.value });
+  // };
 
   onSubmitcreatePartyForm = () => {
     let user_id = "zsullivan93";
