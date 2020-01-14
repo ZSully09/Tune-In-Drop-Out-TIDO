@@ -18,6 +18,7 @@ import './Player.scss';
 //     })
 // }
 
+// SDK TOKEN
 const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
 
 const Player = () => {
@@ -25,7 +26,7 @@ const Player = () => {
   const [isLoading, setLoading] = useState(false);
   const [currentTrack, setCurrentTrack] = useState({});
   const [playlist, setPlaylist] = useState([]);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -46,14 +47,19 @@ const Player = () => {
       });
 
       player.addListener('player_state_changed', state => {
-        console.log('currentTrack', currentTrack);
+        console.log('currentTrack', state.track_window.current_track);
         setCurrentTrack(state.track_window.current_track);
-        console.log('current track artists', state.track_window.currentTrack);
+        console.log(
+          'current track artists',
+          state.track_window.current_track.artists[0].name
+        );
+        console.log(currentTrack);
       });
 
       player.connect();
 
       setPlayer(player);
+      setIsPaused(false);
     };
   }, []);
 
@@ -74,21 +80,25 @@ const Player = () => {
       console.log('no such player yet, mon');
     }
   };
-
+  console.log('test current track', currentTrack);
   return (
     <div className={playerDiv}>
       <Script url="https://sdk.scdn.co/spotify-player.js" />
 
-      {/* <img alt="" src={currentTrack.album.images[2].url}></img> */}
+      {currentTrack.album && (
+        <img alt="" src={currentTrack.album.images[2].url}></img>
+      )}
 
-      <div>
-        <div id="song">{currentTrack.name}</div>
-        {/* <div id="artist">{currentTrack.artists[0].name}</div> */}
+      <div id="song--details">
+        {currentTrack && <div id="song">{currentTrack.name}</div>}
+        {currentTrack.artists && (
+          <div id="artist">{`${currentTrack.artists[0].name}`}</div>
+        )}
       </div>
       <div id="commands">
         <MdPlayArrow
           onClick={() => {
-            console.log('purple people eaters Playing');
+            console.log('purple people eaters Playing', currentTrack);
             togglePlay();
           }}
         />
