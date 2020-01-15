@@ -18,3 +18,13 @@ export const subscribeToSongAdd = callback => {
     callback(song);
   });
 };
+
+// export const currentTrackPlaying = (song, room) => {
+//   socket.emit('currentTrackPlaying', { song, room });
+// };
+
+// export const subscribeToCurrentTrackPlaying = callback => {
+//   socket.on('currentTrackPlaying', song => {
+//     callback(song);
+//   });
+// };
