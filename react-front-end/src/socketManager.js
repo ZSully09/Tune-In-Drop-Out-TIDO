@@ -5,7 +5,7 @@ import socketIOClient from 'socket.io-client';
 
 //Very simply connect to the socket
 const host = window.location.origin.replace(/^http/, 'ws');
-const socket = socketIOClient(host);
+const socket = socketIOClient(host, { transports: ['websocket'] });
 
 export const joinParty = partyName => {
   socket.emit('joinParty', partyName);
