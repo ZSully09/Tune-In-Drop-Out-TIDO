@@ -26,7 +26,7 @@ const Player = () => {
   const [player, setPlayer] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [currentTrack, setCurrentTrack] = useState({});
-  const [playlist, setPlaylist] = useState([]);
+  // const [playlist, setPlaylist] = useState([]);
   const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {
