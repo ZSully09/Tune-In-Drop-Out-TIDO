@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
 import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
-// import { currentTrackPlaying } from './../../socketManager.js';
+import {
+  currentTrackPlaying,
+  subscribeToCurrentTrackPlaying
+} from './../../socketManager.js';
 // import getSongsFromSpotifyPlaylist from '../party_room/Party';
 import './Player.scss';
 // const Player = ({
@@ -32,6 +35,8 @@ const Player = () => {
   const [currentTrack, setCurrentTrack] = useState({});
   // const [playlist, setPlaylist] = useState([]);
   const [isPaused, setIsPaused] = useState(true);
+
+  // currentTrackPlaying(currentTrack);
 
   useEffect(() => {
     setLoading(true);
@@ -70,9 +75,18 @@ const Player = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const onSongChange = song => {};
-  });
+  // subscribeToCurrentTrackPlaying((track) => {
+  //   setCurrentTrack(track)
+  // })
+
+  // useEffect(() => {
+  //   const onSongChange = song => {
+  //     console.log('on song change', song);
+  //     //use the socket method for updating current playing track
+  //     setCurrentTrack(song);
+  //   };
+  //   subscribeToCurrentTrackPlaying(onSongChange);
+  // }, [currentTrack]);
 
   const playerDiv = classNames('div--player');
 
@@ -146,27 +160,7 @@ const Player = () => {
           <div id="artist">{`${currentTrack.artists[0].name}`}</div>
         )}
       </div>
-      <div id="commands">
-        {commands()}
-        {/* <MdPlayArrow
-          onClick={() => {
-            console.log('purple people eaters Playing', currentTrack);
-            togglePlay();
-          }}
-        />
-        <MdPause
-          onClick={() => {
-            console.log('purple people eaters Pausing');
-            togglePlay();
-          }}
-        /> */}
-        {/* <MdSkipNext
-          onClick={() => {
-            console.log('pink people eaters Skipping');
-            toggleNext();
-          }}
-        /> */}
-      </div>
+      <div id="commands">{commands()}</div>
     </div>
   );
 };
