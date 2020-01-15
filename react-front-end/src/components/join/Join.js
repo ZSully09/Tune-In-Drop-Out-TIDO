@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import "./Join.scss";
-import SpotifyLogin from "react-spotify-login";
-import accessToken from "../create/Create";
 
 class Join extends React.Component {
   constructor() {
@@ -14,21 +12,25 @@ class Join extends React.Component {
   }
 
   onSubmitpartyName = () => {
-    const partyName = classNames("input--party--name");
+    // HARD-CODED ids
+    // PLAYLIST NAME = Curdle-Fetus-Chesterfield
+    let user_id = "1159700382";
+    let playlist_id = "2B9yx6aJsB9hpCvUrnWpQJ";
 
-    let playlist_id = "3a7bXfozKZeDrmjTKnSjS9";
-    // let partyName = playlist_id;
-    fetch(`https://api.spotify.com/v1/me/playlists/${playlist_id}`, {
-      headers: {
-        Authorization: `Bearer BQA1T6hFSpMmfQWIN3y6p4wenRsakp8KddatMu3TwlKOs_9VYxaCTRnJwmdk3CzzOIFxYdm55BCa9Jomwjz2dsHCUIrwcFCxgmjrnPRbib1U71CXOkDh9uZuWoyseSwonpMKtB_9ebmaKKqawh5IuMrW0_fcTr9AhoVHtYRLVIvGasthc_PwVslG8g8TdVX0VuOx6OhCjuM0avh1D0EXBoQr_N5hgQ`,
-        "Content-Type": "application/json"
-      },
-      method: "GET",
-      body: JSON.stringify({
-        name: this.state.name,
-        public: true
-      })
-    })
+    fetch(
+      `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
+          "Content-Type": "application/json"
+        },
+        method: "GET",
+        body: JSON.stringify({
+          name: this.state.name,
+          public: true
+        })
+      }
+    )
       .then(res => {
         console.log("create party", res);
       })
@@ -48,9 +50,7 @@ class Join extends React.Component {
         <form className={createPartyForm}>
           <input className={partyName} placeholder="Party Name"></input>
 
-          <Link to="party/${playlist_id}">
-            {/* <Link to="/${partyName}"> */}
-
+          <Link to={`/party/${this.state.partyName}`}>
             <button className={createNewPartyButton}> Join Party </button>
           </Link>
         </form>
