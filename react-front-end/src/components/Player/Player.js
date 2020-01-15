@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
 import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
+// import { currentTrackPlaying } from './../../socketManager.js';
 // import getSongsFromSpotifyPlaylist from '../party_room/Party';
 import './Player.scss';
 // const Player = ({
@@ -20,9 +21,9 @@ import './Player.scss';
 // }
 
 // SDK TOKEN
-// const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
-const token =
-  'BQD1dvRsPFgQwdpKx-6FYfjvcpzNE8a4jQRJvostGSRtX5vdmpQ7-fimZcSxQQT7329AvDK-TkqfFc-tYYZFTW_pEM0CADbYbj-VpuRe3S1uIl38kXZcJq6S8O3VAoYQMoMGiDR2yOrzJ-q6JAbkFqdvkXw17wmMc4GBA2p2vOUspizZKCBRBLR9s8es';
+const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
+// const token =
+//   'BQD1dvRsPFgQwdpKx-6FYfjvcpzNE8a4jQRJvostGSRtX5vdmpQ7-fimZcSxQQT7329AvDK-TkqfFc-tYYZFTW_pEM0CADbYbj-VpuRe3S1uIl38kXZcJq6S8O3VAoYQMoMGiDR2yOrzJ-q6JAbkFqdvkXw17wmMc4GBA2p2vOUspizZKCBRBLR9s8es';
 
 const Player = () => {
   const [player, setPlayer] = useState(null);
@@ -68,6 +69,10 @@ const Player = () => {
       // setIsPaused(false);
     };
   }, []);
+
+  useEffect(() => {
+    const onSongChange = song => {};
+  });
 
   const playerDiv = classNames('div--player');
 

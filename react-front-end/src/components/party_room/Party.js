@@ -47,11 +47,11 @@ export default function Party(props) {
 
     // console.log(term);
 
-    // const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
-
     // SDK Token
-    const token =
-      'BQD1dvRsPFgQwdpKx-6FYfjvcpzNE8a4jQRJvostGSRtX5vdmpQ7-fimZcSxQQT7329AvDK-TkqfFc-tYYZFTW_pEM0CADbYbj-VpuRe3S1uIl38kXZcJq6S8O3VAoYQMoMGiDR2yOrzJ-q6JAbkFqdvkXw17wmMc4GBA2p2vOUspizZKCBRBLR9s8es';
+    const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
+
+    // const token =
+    //   'BQA8YHx82oWMDIf0J-89y8sW1HR9vn994n4ErNCtAcycJ8PkqwEUPcDPS0Nkf_q0uRhWqDiglbuEUZe0R0N92dFshySKliOH4aC0L3rS7br-Q6JV2QZ4B6FZCO4NldPa6e5W5oj25GaoxdnBKX-mIIfZ_Td71U1a9_a0iVMn0I6dvKmPgjNqlhV5haXM';
 
     axios(`	https://api.spotify.com/v1/search?q=${term}&type=track&limit=7 `, {
       headers: { Authorization: `Bearer ${token}` }
