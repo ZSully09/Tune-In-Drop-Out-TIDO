@@ -20,7 +20,9 @@ import './Player.scss';
 // }
 
 // SDK TOKEN
-const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
+// const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
+const token =
+  'BQD1dvRsPFgQwdpKx-6FYfjvcpzNE8a4jQRJvostGSRtX5vdmpQ7-fimZcSxQQT7329AvDK-TkqfFc-tYYZFTW_pEM0CADbYbj-VpuRe3S1uIl38kXZcJq6S8O3VAoYQMoMGiDR2yOrzJ-q6JAbkFqdvkXw17wmMc4GBA2p2vOUspizZKCBRBLR9s8es';
 
 const Player = () => {
   const [player, setPlayer] = useState(null);
