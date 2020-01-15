@@ -30,8 +30,8 @@ class Create extends React.Component {
     fetch(`https://api.spotify.com/v1/users/${user_id}/playlists`, {
       headers: {
         // OAuth Token
-        // Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
-        Authorization: `Bearer BQCLbeWYurFBPEsAJfSfz2aO7j5qW796rae44LD2S_sMd3NLcd7NFxxt3tzelmYjwUAAFFJKhn7poggfCJ89avplJHVdPILLw1zitmrhLUDGPIqkevMvPZvV7ohd4XhiX0RSjs5Rm0hJTbQ1Xv858eAszZbAbgUkJodkD5Cp5JJSF_g1MftZ7lByjufrMp_pUoCbBDKwMTS1vWoGRdj2ly754kAxDY68nmko16M1kG-jiEG2L-nQlKA4By3ZuH0`,
+        Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
+        // Authorization: `Bearer BQCLbeWYurFBPEsAJfSfz2aO7j5qW796rae44LD2S_sMd3NLcd7NFxxt3tzelmYjwUAAFFJKhn7poggfCJ89avplJHVdPILLw1zitmrhLUDGPIqkevMvPZvV7ohd4XhiX0RSjs5Rm0hJTbQ1Xv858eAszZbAbgUkJodkD5Cp5JJSF_g1MftZ7lByjufrMp_pUoCbBDKwMTS1vWoGRdj2ly754kAxDY68nmko16M1kG-jiEG2L-nQlKA4By3ZuH0`,
         'Content-Type': 'application/json'
       },
       method: 'POST',
