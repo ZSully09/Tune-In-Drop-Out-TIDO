@@ -15,7 +15,7 @@ const port = 4001;
 //Setting up express and adding socketIo middleware
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, { transports: ['websocket'] });
 // const io = socketIo(server).listen(server);
 
 // Heroku
