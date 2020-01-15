@@ -35,6 +35,14 @@ io.on('connection', socket => {
     socket.broadcast.emit('outgoing data', { num: data });
   });
 
+  socket.on('joinParty', partyName => {
+    socket.join(partyName);
+  });
+
+  socket.on('songAdd', payload => {
+    socket.to(payload.room).emit('addSong', payload.song);
+  });
+
   // //TODO Socket on {user} vote for {songName}
   // socket.on("");
 

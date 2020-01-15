@@ -1,30 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import classNames from "classnames";
-import "./Join.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
+import './Join.scss';
 
 class Join extends React.Component {
   constructor() {
     super();
     this.state = {
-      accessToken: ""
+      accessToken: '',
+      partyName: ''
     };
   }
 
   onSubmitpartyName = () => {
     // HARD-CODED ids
     // PLAYLIST NAME = Curdle-Fetus-Chesterfield
-    let user_id = "1159700382";
-    let playlist_id = "2B9yx6aJsB9hpCvUrnWpQJ";
+    let user_id = '1159700382';
+    let playlist_id = '2B9yx6aJsB9hpCvUrnWpQJ';
 
     fetch(
       `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
       {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
-        method: "GET",
+        method: 'GET',
         body: JSON.stringify({
           name: this.state.name,
           public: true
@@ -32,23 +33,33 @@ class Join extends React.Component {
       }
     )
       .then(res => {
-        console.log("create party", res);
+        console.log('create party', res);
       })
       .catch(error => {
-        console.log("create failed", error);
+        console.log('create failed', error);
       });
   };
 
-  render() {
-    const createPartyForm = classNames("form--party");
-    const partyName = classNames("input--party--name");
-    const createNewPartyButton = classNames("button--create--new");
+  handlePartyNameChange = event => {
+    this.setState({
+      partyName: event.target.value
+    });
+  };
 
+  render() {
+    const createPartyForm = classNames('form--party');
+    const partyName = classNames('input--party--name');
+    const createNewPartyButton = classNames('button--create--new');
+    console.log(this.state.partyName);
     return (
       <main>
         <h3> Join a Party </h3>
         <form className={createPartyForm}>
-          <input className={partyName} placeholder="Party Name"></input>
+          <input
+            className={partyName}
+            placeholder="Party Name"
+            onChange={this.handlePartyNameChange}
+          ></input>
 
           <Link to={`/party/${this.state.partyName}`}>
             <button className={createNewPartyButton}> Join Party </button>

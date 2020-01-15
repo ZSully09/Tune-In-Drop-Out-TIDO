@@ -9,11 +9,15 @@ import Results from './search_bar/Results';
 
 import axios from 'axios';
 
+import { joinParty, subscribeToSongAdd } from '../../../src/socketManager.js';
+
 export default function Party(props) {
   const [term, setTerm] = useState('');
   const [results, setResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
   const [player, setPlayer] = useState([]);
+
+  const partyName = props.match.params.id;
 
   const onSelectSong = song => {
     setTerm('');
@@ -80,6 +84,9 @@ export default function Party(props) {
           };
         });
         setPlaylist(songs);
+
+        joinParty(partyName);
+
         console.log('songs received from spotify', res);
       })
       .catch(error => {
@@ -91,10 +98,24 @@ export default function Party(props) {
     getSongsFromSpotifyPlaylist();
   }, []);
 
+  useEffect(() => {
+    const onNewSong = song => {
+      console.log(playlist);
+
+      setPlaylist([...playlist, song]);
+    };
+
+    subscribeToSongAdd(onNewSong);
+  }, [playlist]);
+
   return (
     <main>
       <Header onSearch={setTerm} term={term} />
-      <Results results={results} onSelectSong={onSelectSong} />
+      <Results
+        results={results}
+        partyName={partyName}
+        onSelectSong={onSelectSong}
+      />
 
       <div className="playlist">{songs}</div>
 
