@@ -4,7 +4,7 @@ const endpoint = 'wss://tune-in-drop-out-tido.herokuapp.com';
 // const endpoint = 'http://127.0.0.1:4001';
 
 //Very simply connect to the socket
-const socket = socketIOClient(endpoint);
+const socket = socketIOClient();
 
 export const joinParty = partyName => {
   socket.emit('joinParty', partyName);
