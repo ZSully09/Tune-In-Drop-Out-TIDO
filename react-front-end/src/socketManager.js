@@ -1,6 +1,6 @@
 import socketIOClient from 'socket.io-client';
 
-const endpoint = 'ws://tune-in-drop-out-tido.herokuapp.com';
+const endpoint = 'wss://tune-in-drop-out-tido.herokuapp.com';
 // const endpoint = 'http://127.0.0.1:4001';
 
 //Very simply connect to the socket
@@ -20,12 +20,12 @@ export const subscribeToSongAdd = callback => {
   });
 };
 
-export const currentTrackPlaying = (song, room) => {
-  socket.emit('currentTrackPlaying', { song, room });
-};
+// export const currentTrackPlaying = (song, room) => {
+//   socket.emit('currentTrackPlaying', { song, room });
+// };
 
-export const subscribeToCurrentTrackPlaying = callback => {
-  socket.on('currentTrackPlaying', song => {
-    callback(song);
-  });
-};
+// export const subscribeToCurrentTrackPlaying = callback => {
+//   socket.on('currentTrackPlaying', song => {
+//     callback(song);
+//   });
+// };
