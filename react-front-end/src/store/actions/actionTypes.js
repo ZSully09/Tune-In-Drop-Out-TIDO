@@ -84,12 +84,12 @@ const setPauseSong = () => {
   };
 };
 
-export const fetchRecentlyPlayed = options => {
+export const playList = options => {
   return (dispatch, getState) => {
     if (getState().current_user) {
-      dispatch(getRecentlyPlayed());
+      dispatch(playList());
       axios({
-        url: "https://api.spotify.com/v1/me/player/recently-played",
+        url: "https://api.spotify.com/v1/me/playlists{playlist_id}",
         method: "GET",
         headers: {
           Authorization: `Bearer ${getState().current_user.access_token}`
@@ -99,7 +99,7 @@ export const fetchRecentlyPlayed = options => {
         }
       })
         .then(res => {
-          dispatch(setRecentlyPlayed(res.data.items));
+          dispatch(playList(res.data.items));
         })
         .catch(err => {
           console.error("There was an error getting recently played tracks");
@@ -108,15 +108,15 @@ export const fetchRecentlyPlayed = options => {
   };
 };
 
-const getRecentlyPlayed = () => {
-  return {
-    type: GET_RECENTLY_PLAYED
-  };
-};
+// const getRecentlyPlayed = () => {
+//   return {
+//     type: GET_RECENTLY_PLAYED
+//   };
+// };
 
-const setRecentlyPlayed = data => {
-  return {
-    type: SET_RECENTLY_PLAYED,
-    recently_played: data
-  };
-};
+// const setRecentlyPlayed = data => {
+//   return {
+//     type: SET_RECENTLY_PLAYED,
+//     recently_played: data
+//   };
+// };

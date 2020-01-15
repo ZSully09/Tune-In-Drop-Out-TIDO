@@ -86,7 +86,9 @@ export default function Party(props) {
       });
   };
 
-  getSongsFromSpotifyPlaylist();
+  useEffect(() => {
+    getSongsFromSpotifyPlaylist();
+  }, []);
 
   return (
     <main>
