@@ -28,8 +28,8 @@ export default function DropDownSong(props) {
   };
 
   let addSongToSpotifyPlaylist = () => {
-    let user_id = '1159700382';
-    let playlist_id = '2B9yx6aJsB9hpCvUrnWpQJ';
+    let user_id = 'zsullivan93';
+    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
     console.log('before adding song');
     fetch(
       `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
