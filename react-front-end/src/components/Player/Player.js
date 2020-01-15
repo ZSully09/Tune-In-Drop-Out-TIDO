@@ -24,6 +24,7 @@ const token = process.env.REACT_APP_SPOTIFY_SDK_TOKEN;
 
 const Player = () => {
   const [player, setPlayer] = useState(null);
+  // eslint-disable-next-line
   const [isLoading, setLoading] = useState(false);
   const [currentTrack, setCurrentTrack] = useState({});
   // const [playlist, setPlaylist] = useState([]);
