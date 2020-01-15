@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Script from 'react-load-script';
 import classNames from 'classnames';
 import { MdPlayArrow, MdPause, MdSkipNext } from 'react-icons/md';
+// import { currentTrackPlaying } from './../../socketManager.js';
 // import getSongsFromSpotifyPlaylist from '../party_room/Party';
 import './Player.scss';
 // const Player = ({
@@ -68,6 +69,10 @@ const Player = () => {
       // setIsPaused(false);
     };
   }, []);
+
+  useEffect(() => {
+    const onSongChange = song => {};
+  });
 
   const playerDiv = classNames('div--player');
 
