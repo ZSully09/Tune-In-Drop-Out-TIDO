@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
-import SpotifyLogin from "react-spotify-login";
-import classNames from "classnames";
-import "./Login.scss";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+// import SpotifyLogin from "react-spotify-login";
+import classNames from 'classnames';
+import './Login.scss';
 
 class LoginPage extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = { redirectToUserPage: false, accessToken: "" };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.state = { redirectToUserPage: false, accessToken: "" };
+  // }
 
   // componentDidMount() {                  #TODO Test Again before Delete
   //   fetch("http://localhost:8888/")
@@ -40,11 +40,11 @@ class LoginPage extends Component {
     //   return <Redirect to="/" />;
     // }
 
-    const login = classNames("form--login");
-    const email = classNames("input--email");
-    const password = classNames("input--password");
-    const loginButton = classNames("button--login");
-    const spotifyLoginButton = classNames("button--spotify--login");
+    const login = classNames('form--login');
+    const email = classNames('input--email');
+    const password = classNames('input--password');
+    const loginButton = classNames('button--login');
+    // const spotifyLoginButton = classNames('button--spotify--login');
 
     return (
       <div className="login-page">
