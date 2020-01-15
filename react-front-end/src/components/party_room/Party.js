@@ -120,12 +120,7 @@ export default function Party(props) {
       <div className="playlist">{songs}</div>
 
       <footer>
-        <Player
-        // updatePlaylist={updatePlayist}
-        // currSong={{ some: 'snit' }}
-        // setCurrSong={() => {}}
-        // nextSong={playlist[0]}
-        />
+        <Player />
       </footer>
     </main>
   );

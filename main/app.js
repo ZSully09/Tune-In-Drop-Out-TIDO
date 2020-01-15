@@ -40,6 +40,24 @@ io.on('connection', socket => {
   });
 
   socket.on('songAdd', payload => {
+    console.log(payload);
+    let users = payload.room
+      ? io.sockets.adapter.rooms[payload.room].sockets
+      : {};
+    for (let user in users) {
+      console.log('user', user);
+    }
+    socket.to(payload.room).emit('addSong', payload.song);
+  });
+
+  socket.on('currentTrackPlaying', payload => {
+    console.log(payload);
+    let users = payload.room
+      ? io.sockets.adapter.rooms[payload.room].sockets
+      : {};
+    for (let user in users) {
+      console.log('user', user);
+    }
     socket.to(payload.room).emit('addSong', payload.song);
   });
 
