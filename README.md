@@ -20,14 +20,15 @@ Technologies Used
 JavaScript
 React
 Node & Express
-JSON
+Axios
+Socket.io
 SCSS
 
 API/ SDK Authorisation
 Spotify: https://developer.spotify.com/
 
 Setup/Installation Requirements
-\$ git clone https://github.com/
+\$ git clone https://github.com/ZSully09/Tune-In-Drop-Out-TIDO
 
 \$ cd Tune-In-Drop-Out-TIDO/
 
