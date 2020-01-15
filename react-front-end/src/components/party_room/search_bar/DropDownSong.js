@@ -28,16 +28,16 @@ export default function DropDownSong(props) {
   };
 
   let addSongToSpotifyPlaylist = () => {
-    let user_id = '1159700382';
-    let playlist_id = '2B9yx6aJsB9hpCvUrnWpQJ';
+    let user_id = 'zsullivan93';
+    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
     console.log('before adding song');
     fetch(
       `https://api.spotify.com/v1/users/${user_id}/playlists/${playlist_id}/tracks`,
       {
         headers: {
           // OAuth Token
-          Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
-          // Authorization: `Bearer BQC_YBs2eeh3Y0KLlXVv2IHcbfP4DOFj-0gMoBkKpb0gHey7Nm88DmHBj4b9DgtJp4SR7O8-0Z7dFDbUwcPJqIamqDXWpYi360kjJ6mRvLW6wi9E3mvPtDEa3aWDT0n7ae85HnBsn4DU457Izy900Sj-dFAV4TUeECBiycD2cXlUKPxI_0fU4dkUd9N8h3VbIeOvpMOzbM_77InkH2TwDS66pzzhcDYGWpCLOzPGxrEhdOZQJJ-LC3kriEC9YnI`,
+          // Authorization: `Bearer ${process.env.REACT_APP_SPOTIFY_OAUTH}`,
+          Authorization: `Bearer BQCLbeWYurFBPEsAJfSfz2aO7j5qW796rae44LD2S_sMd3NLcd7NFxxt3tzelmYjwUAAFFJKhn7poggfCJ89avplJHVdPILLw1zitmrhLUDGPIqkevMvPZvV7ohd4XhiX0RSjs5Rm0hJTbQ1Xv858eAszZbAbgUkJodkD5Cp5JJSF_g1MftZ7lByjufrMp_pUoCbBDKwMTS1vWoGRdj2ly754kAxDY68nmko16M1kG-jiEG2L-nQlKA4By3ZuH0`,
           'Content-Type': 'application/json'
         },
         method: 'POST',
