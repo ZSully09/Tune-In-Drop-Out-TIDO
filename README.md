@@ -49,7 +49,6 @@ The app will automatically reload if you change any of the source files.
 
 Contact
 If you have any updates or suggestions please contact,
-!Zach [https://github.com/ZSully09]
-!Nick [https://github.com/hoszie]
-!Chris [https://github.com/drystar]  
+Zach [https://github.com/ZSully09] Nick [https://github.com/hoszie] Chris [https://github.com/drystar]  
+
 or make a contribution to our repository.
