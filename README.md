@@ -1,7 +1,7 @@
 Final Project
 A playlister party app that ultilises the spotify API & SDK.
 
-!(https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/join.png?raw=true)
+!["Join"](https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/join.png?raw=true)
 !(https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/all.png?raw=true)
 !(https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/add.png?raw=true)
 
