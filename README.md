@@ -2,8 +2,8 @@ Final Project
 A playlister party app that ultilises the spotify API & SDK.
 
 !["Join"](https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/join.png?raw=true)
-!["Console"]((https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/all.png?raw=true)
-!["Add"]((https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/add.png?raw=true)
+!["Console"](https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/all.png?raw=true)
+!["Add"](https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/add.png?raw=true)
 
 User Stories
 As a party host, I want to be able to login with my spotify credentials
