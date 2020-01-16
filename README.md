@@ -1,5 +1,5 @@
-Final Project
-A playlister party app that ultilises the spotify SDK.
+## Final Project
+## A playlister party app that ultilises the spotify SDK.
 
 !["Join"](https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/join.png?raw=true)
 !["Console"](https://github.com/ZSully09/Tune-In-Drop-Out-TIDO/blob/master/images/all.png?raw=true)
