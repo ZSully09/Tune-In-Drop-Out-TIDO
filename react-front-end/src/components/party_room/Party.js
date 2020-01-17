@@ -63,7 +63,7 @@ export default function Party(props) {
 
   let getSongsFromSpotifyPlaylist = () => {
     // let playlist_id = `${process.env.REACT_APP_SPOTIFY_PLAYLIST_ID}`;
-    let playlist_id = '0kOGmEeNnHjF7EClZAKC9z';
+    let playlist_id = '67RGne4x0phkFq3sQfzzYJ';
     // console.log('before adding song');
     axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, {
       headers: {

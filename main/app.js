@@ -15,15 +15,15 @@ const port = 4001;
 //Setting up express and adding socketIo middleware
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, { transports: ['websocket'] });
+const io = socketIo(server);
 // const io = socketIo(server).listen(server);
 
 // Heroku
-app.use(express.static(path.join(__dirname, '/../react-front-end/build/')));
+// app.use(express.static(path.join(__dirname, '/../react-front-end/build/')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../react-front-end/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/../react-front-end/build/index.html'));
+// });
 
 // app.post('*', (req, res) => {
 //   res.sendFile(path.join(__dirname + '/../react-front-end/build/index.html'));
