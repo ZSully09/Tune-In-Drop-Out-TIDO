@@ -5,9 +5,18 @@ import socketIOClient from 'socket.io-client';
 
 //Very simply connect to the socket
 // const host = window.location.origin.replace(/^http/, 'ws');
-const socket = socketIOClient('/', {
-  transports: ['websocket']
-});
+// // const socket = socketIOClient('/', {
+// //   transports: ['websocket']
+// // });
+// console.log('host', host);
+// const endpoint = 'http://127.0.0.1:4001';
+const endpoint = `${window.location.protocol.replace('http', 'ws')}//${
+  window.location.hostname
+}:4001`;
+console.log('endpoint', endpoint);
+
+//Very simply connect to the socket
+const socket = socketIOClient(endpoint);
 
 export const joinParty = partyName => {
   socket.emit('joinParty', partyName);
