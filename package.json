@@ -12,7 +12,7 @@
     "heroku-postbuild": "cd react-front-end && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "chance": "^1.1.4",
     "cookie-parser": "^1.4.4",
