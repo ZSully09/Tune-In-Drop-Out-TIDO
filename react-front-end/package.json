@@ -21,7 +21,7 @@
     "react-load-script": "0.0.6",
     "react-router-auth": "^1.0.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "react-spotify-login": "^0.9.1",
     "react-toast-notifications": "^2.4.0",
     "socket-io": "^1.0.0",
@@ -51,7 +51,7 @@
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/react": "^6.5.13",
     "storybook": "^5.1.11"
   }
 }
